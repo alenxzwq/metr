@@ -1,0 +1,19 @@
+@mixin button-primary-yellow {
+  background-color: $yellow;
+  border-radius: $button-border-radius;
+
+  & span {
+    font-family: "UNCAGE";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+
+    letter-spacing: 0.11em;
+
+    color: $dark;
+  }
+
+  &:hover {
+    background: darken($yellow, 10%);
+  }
+}

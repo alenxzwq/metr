@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* ТИПОГРАФИКА */
+@font-face {
+  font-family: "UNCAGE";
+  src: url("/fonts/UNCAGE-SemiBold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "UNCAGE";
+  src: url("/fonts/UNCAGE-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "UNCAGE";
+  src: url("/fonts/UNCAGE-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-semibold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-extrabold.otf");
+  font-weight: 800;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ПЕРЕМЕННЫЕ */
+/* СБРОС СТИЛЕЙ */
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Убираем списки */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Убираем подчёркивание у ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Наследование шрифтов */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+/* Убираем стандартные кнопки */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Медиа элементы */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Убираем обводку у фокуса (лучше оставить для доступности) */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Таблицы */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Цитаты */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+}
+
+/* Горизонтальная линия */
+hr {
+  border: none;
+  border-top: 1px solid currentColor;
+  opacity: 0.25;
+}
+
+/* Убираем стрелки у number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+
+/* МИКСИНЫ */
+/* КОМПОНЕНТЫ */
+.btn-primary-yellow {
+  background-color: #f8ec46;
+  border-radius: 3px;
+}
+
+.btn-primary-yellow span {
+  font-family: "UNCAGE";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.11em;
+  color: #373737;
+}
+
+.btn-primary-yellow:hover {
+  background: #f6e715;
+}
+/*# sourceMappingURL=style.css.map */

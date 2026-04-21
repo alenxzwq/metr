@@ -1,0 +1,4 @@
+.btn-primary-yellow {
+  @include button-primary-yellow; // берём рецепт
+  // можно добавить что-то своё поверх
+}

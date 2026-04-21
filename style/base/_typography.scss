@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "UNCAGE";
+  src: url("/fonts/UNCAGE-SemiBold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "UNCAGE";
+  src: url("/fonts/UNCAGE-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "UNCAGE";
+  src: url("/fonts/UNCAGE-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-semibold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope-extrabold.otf");
+  font-weight: 800;
+}
+
+html {
+  // Устанавливаем базовый размер шрифта (16px = 100%)
+  font-size: 16px;
+
+  // Сглаживание шрифтов для лучшего отображения
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
