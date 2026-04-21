@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 120px;
+  margin-right: 120px;
+
+  &--navigation {
+    &--list {
+      display: flex;
+      gap: 80px;
+
+      & li {
+        font-family: "Manrope";
+        font-weight: 400;
+        font-size: 17px;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--logo {
+    width: 56px;
+    height: 65px;
+  }
+
+  @include desktop {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+
+  @include laptop {
+    margin-left: 70px;
+    margin-right: 70px;
+
+    &--logo {
+      width: 45px;
+      height: 55px;
+    }
+
+    &--navigation {
+      &--list {
+        gap: 50px;
+
+        & li {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

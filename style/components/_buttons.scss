@@ -2,3 +2,12 @@
   @include button-primary-yellow; // берём рецепт
   // можно добавить что-то своё поверх
 }
+
+.btn-header {
+  @include button-primary-yellow(12px 25px);
+
+  @include laptop {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}

@@ -162,16 +162,18 @@ input[type="number"] {
 }
 
 /* МИКСИНЫ */
+/* АДАПТИВНАЯ ВЁРСТКА */
 /* КОМПОНЕНТЫ */
 .btn-primary-yellow {
   background-color: #f8ec46;
   border-radius: 3px;
+  padding: 12px 25px;
 }
 
 .btn-primary-yellow span {
   font-family: "UNCAGE";
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
@@ -179,5 +181,204 @@ input[type="number"] {
 
 .btn-primary-yellow:hover {
   background: #f6e715;
+}
+
+.btn-header {
+  background-color: #f8ec46;
+  border-radius: 3px;
+  padding: 12px 25px;
+}
+
+.btn-header span {
+  font-family: "UNCAGE";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.11em;
+  color: #373737;
+}
+
+.btn-header:hover {
+  background: #f6e715;
+}
+
+@media (min-width: 1000px) and (max-width: 1524px) {
+  .btn-header {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+/* БЛОКИ */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.header--navigation--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 80px;
+}
+
+.header--navigation--list li {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 17px;
+  color: #f0f0f0;
+  cursor: pointer;
+}
+
+.header--logo {
+  width: 56px;
+  height: 65px;
+}
+
+@media (min-width: 1525px) and (max-width: 2000px) {
+  .header {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1524px) {
+  .header {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  .header--logo {
+    width: 45px;
+    height: 55px;
+  }
+  .header--navigation--list {
+    gap: 50px;
+  }
+  .header--navigation--list li {
+    font-size: 16px;
+  }
+}
+
+/* СТРАНИЦЫ */
+body {
+  background-color: #373737;
+}
+
+.promoblock {
+  background: url(/assets/gallery/background/background_home_promoblock.png);
+  padding: 50px 0px 330px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.promoblock__heading {
+  font-family: "UNCAGE";
+  font-size: 45px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.promoblock__heading--first {
+  margin-left: 15%;
+  margin-top: 120px;
+}
+
+.promoblock__heading--second {
+  margin-left: 35%;
+  margin-top: 0px;
+}
+
+.promoblock--text {
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 34px;
+  color: #f0f0f0;
+  margin-left: 35%;
+}
+
+.promoblock--btnGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 70px;
+  margin-left: 35%;
+  margin-top: 5%;
+}
+
+.promoblock--advantagesGroup {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 120px;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.2px);
+  -webkit-backdrop-filter: blur(11.2px);
+  border-radius: 16px;
+  mask: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, black), to(black));
+  mask: linear-gradient(to bottom, transparent 0%, black 30%, black 100%);
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, black), to(black));
+  -webkit-mask: linear-gradient(to bottom, transparent 0%, black 30%, black 100%);
+}
+
+.promoblock--advantagesGroup div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5%;
+}
+
+.promoblock--advantagesGroup div h2 {
+  font-family: "UNCAGE";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 66px;
+  letter-spacing: 0.11em;
+  color: #f0f0f0;
+}
+
+.promoblock--advantagesGroup div p {
+  /* в 25 городах проведён фестиваль */
+  width: 412px;
+  height: 27px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.11em;
+  color: #f0f0f0;
 }
 /*# sourceMappingURL=style.css.map */

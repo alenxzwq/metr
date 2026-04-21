@@ -1,11 +1,12 @@
-@mixin button-primary-yellow {
+@mixin button-primary-yellow($padding: 12px 25px) {
   background-color: $yellow;
   border-radius: $button-border-radius;
+  padding: $padding;
 
   & span {
     font-family: "UNCAGE";
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
 
     letter-spacing: 0.11em;
@@ -15,5 +16,19 @@
 
   &:hover {
     background: darken($yellow, 10%);
+  }
+}
+
+/* АДАПТИВНАЯ ВЁРСТКА */
+
+@mixin desktop {
+  @media (min-width: 1525px) and (max-width: 2000px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 1000px) and (max-width: 1524px) {
+    @content;
   }
 }
