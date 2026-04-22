@@ -4,11 +4,15 @@ body {
 
 .promoblock {
   background: url(/assets/gallery/background/background_home_promoblock.png);
-  padding: 50px 0px 330px 0px;
+  padding: 50px 0px 320px 0px;
   background-size: cover;
   background-repeat: no-repeat;
 
   position: relative;
+
+  @include phone_2 {
+    padding: 50px 0px 300px 0px;
+  }
 
   &__heading {
     font-family: "UNCAGE";
@@ -16,14 +20,51 @@ body {
     font-weight: 600;
     color: $white;
 
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include phone_1 {
+      font-size: 27px;
+    }
+
+    @include phone_2 {
+      font-size: 22px;
+    }
+
     &--first {
       margin-left: 15%;
       margin-top: 120px;
+
+      @include tablet {
+        margin-left: 17%;
+      }
+
+      @include phone_1 {
+        margin-left: 10%;
+      }
+
+      @include phone_2 {
+        margin-left: 10%;
+        margin-top: 150px;
+      }
     }
 
     &--second {
       margin-left: 35%;
       margin-top: 0px;
+
+      @include tablet {
+        margin-left: 25%;
+      }
+
+      @include phone_1 {
+        margin-left: 10%;
+      }
+
+      @include phone_2 {
+        margin-left: 10%;
+      }
     }
   }
 
@@ -34,29 +75,75 @@ body {
     line-height: 34px;
     color: $white;
     margin-left: 35%;
+
+    @include tablet {
+      margin-left: 25%;
+      font-size: 18px;
+    }
+
+    @include phone_1 {
+      font-size: 14px;
+      margin-left: 10%;
+    }
+
+    @include phone_2 {
+      font-size: 14px;
+      margin-left: 10%;
+      line-height: 18px;
+    }
   }
 
   &--btnGroup {
     display: flex;
     gap: 70px;
     margin-left: 35%;
-    margin-top: 5%;
+    margin-top: 2%;
+
+    @include tablet {
+      margin-left: 25%;
+      gap: 50px;
+    }
+
+    @include phone_1 {
+      position: absolute; // Кнопки фиксируются внутри родителя
+      top: 55%; // Фиксированное расстояние снизу
+      left: 10%; // Центрирование
+
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-left: 0;
+      gap: 10px;
+      width: auto;
+    }
+
+    @include phone_2 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 0;
+      gap: 10px;
+      width: auto;
+      margin-top: 15%;
+    }
   }
 
   &--advantagesGroup {
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 120px;
+    gap: clamp(20px, 5vw, 120px);
+    padding: 0 clamp(10px, 3vw, 50px);
 
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(11.2px);
     -webkit-backdrop-filter: blur(11.2px);
-    border-radius: 16px;
 
     mask: linear-gradient(to bottom, transparent 0%, black 30%, black 100%);
     -webkit-mask: linear-gradient(
@@ -66,12 +153,32 @@ body {
       black 100%
     );
 
+    @include phone_1 {
+      height: 190px;
+      padding-top: 30px;
+    }
+
+    @include phone_2 {
+      height: 150px;
+      padding-top: 10px;
+    }
+
     & div {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin-top: 5%;
+      height: 120px; // Фиксированная высота
+      min-height: 120px;
+
+      flex: 1; // Равномерное распределение пространства
+      min-width: 0; // Разрешает сжатие
+      max-width: 33.333%; // Максимум 1/3 ширины
+
+      @include tablet {
+        max-width: 23.333%;
+      }
 
       & h2 {
         font-family: "UNCAGE";
@@ -79,28 +186,166 @@ body {
         font-weight: 600;
         font-size: 50px;
         line-height: 66px;
+        height: 70px;
 
         letter-spacing: 0.11em;
 
         color: $white;
+
+        @include laptop {
+          font-size: 45px;
+        }
+
+        @include tablet {
+          font-size: 40px;
+        }
+
+        @include phone_1 {
+          font-size: 35px;
+        }
+
+        @include phone_2 {
+          font-size: 28px;
+        }
       }
 
       & p {
-        /* в 25 городах проведён фестиваль */
-
-        width: 412px;
-        height: 27px;
-
         font-family: "Manrope";
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
-        line-height: 27px;
+        line-height: 20px;
         text-align: center;
         letter-spacing: 0.11em;
+        height: 40px;
 
         color: $white;
+
+        @include tablet {
+          font-size: 14px;
+          line-height: 15px;
+        }
+
+        @include phone_1 {
+          font-size: 10px;
+          line-height: 15px;
+        }
+
+        @include phone_2 {
+          font-size: 10px;
+          line-height: 12px;
+        }
       }
+    }
+  }
+}
+
+.instructionBlock {
+  &--headings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 100px;
+
+    & h2 {
+      font-family: "UNCAGE";
+      color: $yellow;
+      font-size: 45px;
+    }
+
+    & p {
+      font-family: "Manrope";
+      color: $turquoise;
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+
+  &--rule {
+    background: url(/assets/gallery/background/rule_horizantal.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    height: 300px;
+    width: calc(100% - 240px); // отступы по 120px с каждой стороны
+    margin: 0 auto;
+  }
+
+  &--nav {
+    &-list {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px; // ← расстояние между всеми колонками и строками
+
+      // или раздельно:
+      column-gap: 60px; // только между колонками
+      row-gap: 20px;
+
+      width: calc(100% - 240px);
+      margin: 0 auto;
+      margin-top: 100px; // ← прижимает к низу
+      align-items: end;
+
+      & li {
+        font-family: "UNCAGE";
+        color: $white;
+        font-size: 18px;
+        padding-right: 0%;
+        line-height: 20px;
+
+        display: inline-block; // Элемент занимает только ширину текста
+        width: fit-content;
+
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--headingsBottom {
+    font-family: "UNCAGE";
+
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 650px;
+    margin-right: 20%;
+    line-height: 30px;
+    /* or 148% */
+    letter-spacing: 0.11em;
+
+    color: #f0f0f0;
+  }
+
+  .highlight {
+    color: $turquoise;
+  }
+
+  &--photoGroup {
+    display: flex;
+    gap: 20px;
+
+    width: calc(100% - 240px); // отступы по 120px с каждой стороны
+    margin: 0 auto;
+
+    &-photo_one {
+      width: 520px;
+      height: 270px;
+      margin-top: -60px;
+    }
+
+    &-photo_two {
+      width: 410px;
+      height: 340px;
+      margin-top: 20px;
+    }
+
+    &-photo_three {
+      width: 410px;
+      height: 250px;
+      margin-top: 20px;
     }
   }
 }

@@ -4,10 +4,45 @@
 }
 
 .btn-header {
-  @include button-primary-yellow(12px 25px);
+  @include button-primary-yellow(10px 22px);
+  display: block;
 
   @include laptop {
     padding: 10px 20px;
     font-size: 12px;
+    display: block;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include phone_1 {
+    display: none;
+  }
+
+  @include phone_2 {
+    display: none;
+  }
+}
+
+.promoblock-btn {
+  @include button-primary-yellow(12px 30px);
+  display: block;
+
+  @include tablet {
+    padding: 10px 25px;
+  }
+
+  @include phone_1 {
+    @include button-primary-yellow(10px 10px, 13px);
+    width: 215px;
+    font-size: 13px;
+  }
+
+  @include phone_2 {
+    @include button-primary-yellow(10px 10px, 14px);
+    width: 80%;
+    font-size: 13px;
   }
 }

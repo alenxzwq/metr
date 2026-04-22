@@ -5,43 +5,36 @@
   src: url("/fonts/UNCAGE-SemiBold.otf");
   font-weight: 600;
 }
-
 @font-face {
   font-family: "UNCAGE";
   src: url("/fonts/UNCAGE-Regular.otf");
   font-weight: 400;
 }
-
 @font-face {
   font-family: "UNCAGE";
   src: url("/fonts/UNCAGE-Medium.otf");
   font-weight: 500;
 }
-
 @font-face {
   font-family: "Manrope";
   src: url("/fonts/manrope-regular.otf");
   font-weight: 400;
 }
-
 @font-face {
   font-family: "Manrope";
   src: url("/fonts/manrope-medium.otf");
   font-weight: 500;
 }
-
 @font-face {
   font-family: "Manrope";
   src: url("/fonts/manrope-semibold.otf");
   font-weight: 600;
 }
-
 @font-face {
   font-family: "Manrope";
   src: url("/fonts/manrope-extrabold.otf");
   font-weight: 800;
 }
-
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -56,8 +49,7 @@ html {
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -149,13 +141,13 @@ hr {
 }
 
 /* Убираем стрелки у number input */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type="number"] {
+input[type=number] {
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
           appearance: textfield;
@@ -167,9 +159,8 @@ input[type="number"] {
 .btn-primary-yellow {
   background-color: #f8ec46;
   border-radius: 3px;
-  padding: 12px 25px;
+  padding: 10px 22px;
 }
-
 .btn-primary-yellow span {
   font-family: "UNCAGE";
   font-weight: 400;
@@ -178,17 +169,15 @@ input[type="number"] {
   letter-spacing: 0.11em;
   color: #373737;
 }
-
 .btn-primary-yellow:hover {
-  background: #f6e715;
+  background: rgb(246.140625, 230.953125, 20.859375);
 }
 
 .btn-header {
   background-color: #f8ec46;
   border-radius: 3px;
-  padding: 12px 25px;
+  padding: 10px 22px;
 }
-
 .btn-header span {
   font-family: "UNCAGE";
   font-weight: 400;
@@ -197,40 +186,131 @@ input[type="number"] {
   letter-spacing: 0.11em;
   color: #373737;
 }
-
 .btn-header:hover {
-  background: #f6e715;
+  background: rgb(246.140625, 230.953125, 20.859375);
 }
-
-@media (min-width: 1000px) and (max-width: 1524px) {
+.btn-header {
+  display: block;
+}
+@media (min-width: 1200px) and (max-width: 1524px) {
   .btn-header {
     padding: 10px 20px;
     font-size: 12px;
+    display: block;
+  }
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .btn-header {
+    display: none;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .btn-header {
+    display: none;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .btn-header {
+    display: none;
+  }
+}
+
+.promoblock-btn {
+  background-color: #f8ec46;
+  border-radius: 3px;
+  padding: 12px 30px;
+}
+.promoblock-btn span {
+  font-family: "UNCAGE";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.11em;
+  color: #373737;
+}
+.promoblock-btn:hover {
+  background: rgb(246.140625, 230.953125, 20.859375);
+}
+.promoblock-btn {
+  display: block;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock-btn {
+    padding: 10px 25px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock-btn {
+    background-color: #f8ec46;
+    border-radius: 3px;
+    padding: 10px 10px;
+  }
+  .promoblock-btn span {
+    font-family: "UNCAGE";
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.11em;
+    color: #373737;
+  }
+  .promoblock-btn:hover {
+    background: rgb(246.140625, 230.953125, 20.859375);
+  }
+  .promoblock-btn {
+    width: 215px;
+    font-size: 13px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock-btn {
+    background-color: #f8ec46;
+    border-radius: 3px;
+    padding: 10px 10px;
+  }
+  .promoblock-btn span {
+    font-family: "UNCAGE";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.11em;
+    color: #373737;
+  }
+  .promoblock-btn:hover {
+    background: rgb(246.140625, 230.953125, 20.859375);
+  }
+  .promoblock-btn {
+    width: 80%;
+    font-size: 13px;
   }
 }
 
 /* БЛОКИ */
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-left: 120px;
   margin-right: 120px;
 }
-
+@media (min-width: 800px) and (max-width: 1199px) {
+  .header--navigation {
+    display: none;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .header--navigation {
+    display: none;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .header--navigation {
+    display: none;
+  }
+}
 .header--navigation--list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 80px;
 }
-
 .header--navigation--list li {
   font-family: "Manrope";
   font-weight: 400;
@@ -238,23 +318,44 @@ input[type="number"] {
   color: #f0f0f0;
   cursor: pointer;
 }
-
 .header--logo {
   width: 56px;
   height: 65px;
 }
-
+.header--groupIcon {
+  display: none;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .header--groupIcon {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .header--groupIcon {
+    display: flex;
+    gap: 20px;
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .header--groupIcon {
+    display: flex;
+    gap: 30px;
+  }
+}
 @media (min-width: 1525px) and (max-width: 2000px) {
   .header {
     margin-left: 120px;
     margin-right: 120px;
   }
 }
-
-@media (min-width: 1000px) and (max-width: 1524px) {
+@media (min-width: 1200px) and (max-width: 1524px) {
   .header {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 80px;
+    margin-right: 80px;
   }
   .header--logo {
     width: 45px;
@@ -267,6 +368,30 @@ input[type="number"] {
     font-size: 16px;
   }
 }
+@media (min-width: 800px) and (max-width: 1199px) {
+  .header {
+    margin-left: 90px;
+    margin-right: 90px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .header {
+    margin-left: 50px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .header {
+    margin-left: 50px;
+  }
+  .header--logo {
+    width: 35px;
+    height: 40px;
+  }
+  .header--groupIcon {
+    width: 35px;
+    height: 35px;
+  }
+}
 
 /* СТРАНИЦЫ */
 body {
@@ -275,29 +400,76 @@ body {
 
 .promoblock {
   background: url(/assets/gallery/background/background_home_promoblock.png);
-  padding: 50px 0px 330px 0px;
+  padding: 50px 0px 320px 0px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
-
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock {
+    padding: 50px 0px 300px 0px;
+  }
+}
 .promoblock__heading {
   font-family: "UNCAGE";
   font-size: 45px;
   font-weight: 600;
   color: #f0f0f0;
 }
-
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock__heading {
+    font-size: 36px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock__heading {
+    font-size: 27px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock__heading {
+    font-size: 22px;
+  }
+}
 .promoblock__heading--first {
   margin-left: 15%;
   margin-top: 120px;
 }
-
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock__heading--first {
+    margin-left: 17%;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock__heading--first {
+    margin-left: 10%;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock__heading--first {
+    margin-left: 10%;
+    margin-top: 150px;
+  }
+}
 .promoblock__heading--second {
   margin-left: 35%;
   margin-top: 0px;
 }
-
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock__heading--second {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock__heading--second {
+    margin-left: 10%;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock__heading--second {
+    margin-left: 10%;
+  }
+}
 .promoblock--text {
   font-family: "Manrope";
   font-weight: 500;
@@ -306,79 +478,251 @@ body {
   color: #f0f0f0;
   margin-left: 35%;
 }
-
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock--text {
+    margin-left: 25%;
+    font-size: 18px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock--text {
+    font-size: 14px;
+    margin-left: 10%;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock--text {
+    font-size: 14px;
+    margin-left: 10%;
+    line-height: 18px;
+  }
+}
 .promoblock--btnGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 70px;
   margin-left: 35%;
-  margin-top: 5%;
+  margin-top: 2%;
 }
-
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock--btnGroup {
+    margin-left: 25%;
+    gap: 50px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock--btnGroup {
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    gap: 10px;
+    width: auto;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock--btnGroup {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    gap: 10px;
+    width: auto;
+    margin-top: 15%;
+  }
+}
 .promoblock--advantagesGroup {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 220px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 120px;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 5vw, 120px);
+  padding: 0 clamp(10px, 3vw, 50px);
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(11.2px);
   -webkit-backdrop-filter: blur(11.2px);
-  border-radius: 16px;
-  mask: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, black), to(black));
   mask: linear-gradient(to bottom, transparent 0%, black 30%, black 100%);
-  -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(30%, black), to(black));
   -webkit-mask: linear-gradient(to bottom, transparent 0%, black 30%, black 100%);
 }
-
-.promoblock--advantagesGroup div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 5%;
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock--advantagesGroup {
+    height: 190px;
+    padding-top: 30px;
+  }
 }
-
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock--advantagesGroup {
+    height: 150px;
+    padding-top: 10px;
+  }
+}
+.promoblock--advantagesGroup div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  height: 120px;
+  min-height: 120px;
+  flex: 1;
+  min-width: 0;
+  max-width: 33.333%;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock--advantagesGroup div {
+    max-width: 23.333%;
+  }
+}
 .promoblock--advantagesGroup div h2 {
   font-family: "UNCAGE";
   font-style: normal;
   font-weight: 600;
   font-size: 50px;
   line-height: 66px;
+  height: 70px;
   letter-spacing: 0.11em;
   color: #f0f0f0;
 }
-
+@media (min-width: 1200px) and (max-width: 1524px) {
+  .promoblock--advantagesGroup div h2 {
+    font-size: 45px;
+  }
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock--advantagesGroup div h2 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock--advantagesGroup div h2 {
+    font-size: 35px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock--advantagesGroup div h2 {
+    font-size: 28px;
+  }
+}
 .promoblock--advantagesGroup div p {
-  /* в 25 городах проведён фестиваль */
-  width: 412px;
-  height: 27px;
   font-family: "Manrope";
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
-  line-height: 27px;
+  line-height: 20px;
   text-align: center;
+  letter-spacing: 0.11em;
+  height: 40px;
+  color: #f0f0f0;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .promoblock--advantagesGroup div p {
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .promoblock--advantagesGroup div p {
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .promoblock--advantagesGroup div p {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.instructionBlock--headings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 100px;
+}
+.instructionBlock--headings h2 {
+  font-family: "UNCAGE";
+  color: #f8ec46;
+  font-size: 45px;
+}
+.instructionBlock--headings p {
+  font-family: "Manrope";
+  color: #35c8b5;
+  font-weight: 700;
+  font-size: 24px;
+}
+.instructionBlock--rule {
+  background: url(/assets/gallery/background/rule_horizantal.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 300px;
+  width: calc(100% - 240px);
+  margin: 0 auto;
+}
+.instructionBlock--nav-list {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  row-gap: 20px;
+  width: calc(100% - 240px);
+  margin: 0 auto;
+  margin-top: 100px;
+  align-items: end;
+}
+.instructionBlock--nav-list li {
+  font-family: "UNCAGE";
+  color: #f0f0f0;
+  font-size: 18px;
+  padding-right: 0%;
+  line-height: 20px;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.instructionBlock--headingsBottom {
+  font-family: "UNCAGE";
+  font-weight: 700;
+  font-size: 25px;
+  margin-left: 650px;
+  margin-right: 20%;
+  line-height: 30px;
+  /* or 148% */
   letter-spacing: 0.11em;
   color: #f0f0f0;
 }
-/*# sourceMappingURL=style.css.map */
+.instructionBlock .highlight {
+  color: #35c8b5;
+}
+.instructionBlock--photoGroup {
+  display: flex;
+  gap: 20px;
+  width: calc(100% - 240px);
+  margin: 0 auto;
+}
+.instructionBlock--photoGroup-photo_one {
+  width: 520px;
+  height: 270px;
+  margin-top: -60px;
+}
+.instructionBlock--photoGroup-photo_two {
+  width: 410px;
+  height: 340px;
+  margin-top: 20px;
+}
+.instructionBlock--photoGroup-photo_three {
+  width: 410px;
+  height: 250px;
+  margin-top: 20px;
+}/*# sourceMappingURL=style.css.map */

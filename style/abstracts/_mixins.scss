@@ -1,4 +1,4 @@
-@mixin button-primary-yellow($padding: 12px 25px) {
+@mixin button-primary-yellow($padding: 10px 22px, $font-size: 16px) {
   background-color: $yellow;
   border-radius: $button-border-radius;
   padding: $padding;
@@ -6,7 +6,7 @@
   & span {
     font-family: "UNCAGE";
     font-weight: 400;
-    font-size: 16px;
+    font-size: $font-size;
     line-height: 20px;
 
     letter-spacing: 0.11em;
@@ -28,7 +28,25 @@
 }
 
 @mixin laptop {
-  @media (min-width: 1000px) and (max-width: 1524px) {
+  @media (min-width: 1200px) and (max-width: 1524px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 800px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin phone_1 {
+  @media (min-width: 500px) and (max-width: 799px) {
+    @content;
+  }
+}
+
+@mixin phone_2 {
+  @media (min-width: 250px) and (max-width: 499px) {
     @content;
   }
 }
