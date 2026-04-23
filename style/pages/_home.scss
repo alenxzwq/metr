@@ -250,10 +250,47 @@ body {
     margin-right: 120px;
     margin-top: 100px;
 
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    @include phone_1 {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    @include phone_2 {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
     & h2 {
       font-family: "UNCAGE";
       color: $yellow;
       font-size: 45px;
+
+      @include tablet {
+        font-size: 42px;
+      }
+
+      @include phone_1 {
+        font-size: 30px;
+        line-height: 38px;
+      }
+
+      @include phone_2 {
+        font-size: 30px;
+      }
     }
 
     & p {
@@ -261,34 +298,144 @@ body {
       color: $turquoise;
       font-weight: 700;
       font-size: 24px;
+
+      @include tablet {
+        font-size: 22px;
+      }
+
+      @include phone_1 {
+        font-size: 18px;
+      }
+
+      @include phone_2 {
+        font-size: 17px;
+      }
     }
   }
 
-  &--rule {
-    background: url(/assets/gallery/background/rule_horizantal.svg) no-repeat;
-    background-size: contain;
-    background-position: center;
-
-    height: 300px;
-    width: calc(100% - 240px); // отступы по 120px с каждой стороны
-    margin: 0 auto;
-  }
-
   &--nav {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 50px;
+    }
+
+    @include phone_1 {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 30px;
+    }
+
+    @include phone_2 {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 30px;
+    }
+
+    &-rule {
+      background: url(/assets/gallery/background/rule_horizantal.svg) no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      height: 300px;
+      width: calc(100% - 240px); // отступы по 120px с каждой стороны
+      max-width: 1500px;
+      margin: 0 auto;
+
+      @include desktop {
+        height: 350px;
+
+        max-width: 2000px;
+      }
+
+      @include laptop {
+        height: 340px;
+        max-width: 1500px;
+      }
+
+      @include tablet {
+        background: url(/assets/gallery/background/rule_vertical_tablet.svg);
+        background-repeat: no-repeat;
+        height: 530px;
+        margin-left: 120px;
+        margin-top: 20px;
+
+        max-width: 350px;
+      }
+
+      @include phone_1 {
+        background: url(/assets/gallery/background/rule_vertical_mobile_1.svg);
+        background-repeat: no-repeat;
+        height: 430px;
+        margin-left: 50px;
+        margin-top: 20px;
+
+        max-width: 220px;
+      }
+
+      @include phone_2 {
+        background: url(/assets/gallery/background/rule_vertical_mobile_jpg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 370px;
+        width: 180px; // ФИКСИРОВАННАЯ ширина
+        margin-left: 50px;
+        margin-top: 20px;
+      }
+    }
+
     &-list {
       display: grid;
       grid-template-rows: auto;
       grid-template-columns: repeat(4, 1fr);
-      gap: 40px; // ← расстояние между всеми колонками и строками
+      gap: 40px;
 
-      // или раздельно:
-      column-gap: 60px; // только между колонками
+      column-gap: 60px;
       row-gap: 20px;
 
       width: calc(100% - 240px);
       margin: 0 auto;
-      margin-top: 100px; // ← прижимает к низу
+      margin-top: 100px;
       align-items: end;
+
+      @include tablet {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: auto;
+        row-gap: 115px;
+        margin-top: 22px;
+        align-self: flex-start;
+      }
+
+      @include phone_1 {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: auto;
+        row-gap: 86px;
+        margin-top: 20px;
+        align-self: flex-start;
+
+        margin-left: 10px;
+        margin-right: 0%;
+      }
+
+      @include phone_2 {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: auto;
+        row-gap: 66px;
+        margin-top: 00px;
+        align-self: flex-start;
+
+        margin-left: 10px;
+        margin-right: 0%;
+      }
 
       & li {
         font-family: "UNCAGE";
@@ -297,10 +444,32 @@ body {
         padding-right: 0%;
         line-height: 20px;
 
-        display: inline-block; // Элемент занимает только ширину текста
+        display: inline-block;
         width: fit-content;
 
         cursor: pointer;
+
+        white-space: nowrap;
+
+        @include tablet {
+          font-size: 20px;
+        }
+
+        @include phone_1 {
+          font-size: 18px;
+        }
+
+        @include phone_2 {
+          font-size: 14px;
+
+          width: 120px; // фиксированная ширина
+          min-width: 120px; // минимальная ширина
+          max-width: 120px; // максимальная ширина
+
+          cursor: pointer;
+          white-space: normal; // разрешаем перенос, но контейнер не меняется
+          word-wrap: break-word;
+        }
       }
     }
   }
@@ -310,13 +479,48 @@ body {
 
     font-weight: 700;
     font-size: 25px;
-    margin-left: 650px;
+
+    margin-left: max(18px, calc((100% - 1500px) / 2 + 650px));
     margin-right: 20%;
     line-height: 30px;
     /* or 148% */
     letter-spacing: 0.11em;
 
     color: #f0f0f0;
+
+    @include desktop {
+      margin-left: 44%;
+      padding-top: 2%;
+    }
+
+    @include laptop {
+      margin-left: 45%;
+      padding-top: 0%;
+      font-size: 22px;
+      margin-right: 10%;
+    }
+
+    @include tablet {
+      margin-left: 120px;
+      padding-top: 0%;
+      font-size: 22px;
+      margin-right: 30%;
+    }
+
+    @include phone_1 {
+      margin-left: 50px;
+      padding-top: 0%;
+      font-size: 22px;
+      margin-right: 20%;
+    }
+
+    @include phone_2 {
+      margin-left: 50px;
+      padding-top: 5%;
+      font-size: 18px;
+      line-height: 22px;
+      margin-right: 10%;
+    }
   }
 
   .highlight {
@@ -325,27 +529,218 @@ body {
 
   &--photoGroup {
     display: flex;
-    gap: 20px;
+    gap: 2%;
 
     width: calc(100% - 240px); // отступы по 120px с каждой стороны
     margin: 0 auto;
 
+    @include desktop {
+      margin-top: -1%;
+    }
+
+    @include phone_1 {
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%; // растягиваем на всю ширину
+      margin: 0; // убираем авто-отступы
+      gap: 10px;
+    }
+
+    @include phone_2 {
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%; // растягиваем на всю ширину
+      margin: 0;
+      margin-left: 0px; // убираем авто-отступы
+      gap: 10px;
+    }
+
     &-photo_one {
-      width: 520px;
-      height: 270px;
-      margin-top: -60px;
+      width: 35vw;
+      height: 18vw;
+      margin-top: clamp(-60px, -4vw, -20px); // от -60px до -20px
+
+      @include desktop {
+        margin-top: -60px;
+      }
+
+      @include laptop {
+        margin-top: -90px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+
+      @include phone_1 {
+        display: none;
+      }
+
+      @include phone_2 {
+        display: none;
+      }
     }
 
     &-photo_two {
-      width: 410px;
-      height: 340px;
-      margin-top: 20px;
+      width: 27vw;
+      height: 22vw;
+      margin-top: clamp(5px, 1.5vw, 30px); // от 5px до 30px
+
+      @include tablet {
+        width: 37vw;
+        height: 32vw;
+      }
+
+      @include phone_1 {
+        width: 44vw;
+        height: 39vw;
+
+        margin-left: 50px;
+      }
+
+      @include phone_2 {
+        width: 44vw;
+        height: 42vw;
+        margin-left: 50px;
+      }
     }
 
     &-photo_three {
-      width: 410px;
-      height: 250px;
-      margin-top: 20px;
+      width: 27vw;
+      height: 16vw;
+      margin-top: clamp(5px, 1.5vw, 30px);
+
+      @include tablet {
+        width: 37vw;
+        height: 26vw;
+      }
+
+      @include phone_1 {
+        width: 40vw;
+        height: 30vw;
+      }
+
+      @include phone_2 {
+        width: 38vw;
+        height: 30vw;
+      }
+    }
+  }
+}
+
+.sponsors {
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-top: 130px;
+
+  @include tablet {
+    padding-top: 80px;
+  }
+
+  @include phone_1 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include phone_2 {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 50px;
+  }
+
+  & h2 {
+    font-family: "UNCAGE";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 66px;
+
+    color: $yellow;
+
+    @include tablet {
+      font-size: 42px;
+    }
+
+    @include phone_1 {
+      font-size: 30px;
+      line-height: 38px;
+    }
+
+    @include phone_2 {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+
+  & p {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+
+    color: #e7e7e7;
+
+    @include tablet {
+      font-size: 22px;
+    }
+
+    @include phone_1 {
+      font-size: 18px;
+    }
+
+    @include phone_2 {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &--logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 5%;
+
+    @include tablet {
+      gap: 80px;
+      margin-top: 10%;
+    }
+
+    @include phone_1 {
+      gap: 60px;
+      margin-top: 8%;
+    }
+
+    @include phone_2 {
+      gap: 60px;
+      margin-top: 10%;
+    }
+
+    img {
+      width: 220px; // базовая ширина
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0; // не сжимается
+      flex-grow: 0; // не растягивается
+
+      @include laptop {
+        width: 150px;
+      }
+
+      // Адаптация через медиа-запросы
+      @include tablet {
+        width: 120px;
+      }
+
+      @include phone_1 {
+        width: 100px;
+      }
+
+      @include phone_2 {
+        width: 100px;
+      }
     }
   }
 }
