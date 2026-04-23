@@ -6,6 +6,7 @@
     <title>МЕТР</title>
 
     <link rel="stylesheet" href="/style/style.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
   <body>
     <section class="promoblock">
@@ -117,6 +118,295 @@
       </div>
     </section>
 
-    <section class="reviews"></section>
+    <section class="reviews">
+      <h2 class="reviews__title">Впечатления участников</h2>
+
+      <!-- Контейнер для кастомного скролла -->
+      <div class="reviews__scroll-container">
+        <div class="reviews__wrapper">
+          <div class="reviews__track">
+            <!-- Карточки (оставляем как есть) -->
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <div class="reviews__item">
+              <div class="reviews__card">
+                <div class="reviews__photo">
+                  <img
+                    src="/assets/gallery/reviews/review_1.png"
+                    alt="Михаил"
+                  />
+                  <div class="reviews__overlay">
+                    <p class="reviews__comment">
+                      Мне нравится, что здесь никто не давит и не сравнивает. Ты
+                      просто делаешь свою попытку — и всё. Никто не спрашивает
+                      "а почему так мало?". Просто принимают и радуются за тебя.
+                      Такое редко встретишь.
+                    </p>
+                    <p class="reviews__result">
+                      Пройдено: 40 км <br />
+                      Получено: 3 значка
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__info">
+                <div class="reviews__name">Екатерина, 27 лет</div>
+                <div class="reviews__city">Москва</div>
+              </div>
+            </div>
+
+            <!-- Добавь остальные карточки... -->
+          </div>
+        </div>
+        <!-- Кастомная полоса прокрутки -->
+        <div class="reviews__scrollbar">
+          <div class="reviews__scrollbar-track">
+            <div class="reviews__scrollbar-thumb"></div>
+
+            <img src="/assets/gallery/icon/arrow.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer">
+      <div class="offer--content">
+        <h3>ПОДЕЛИСЬ СВОИМИ ВПЕЧАТЛЕНИЯМИ И ПОЛУЧИ ПОДАРОК</h3>
+        <button class="offer-btn">
+          <span>РАССКАЗАТЬ ПРО УЧАСТИЕ</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="meterWall">
+      <div class="meterWall--blockTop">
+        <div class="meterWall--blockTop--heading">
+          <h2>СТЕНА МЕТРА</h2>
+          <p>Приближай карту, находи участников, добавляй свой метр</p>
+        </div>
+        <button><span>ДОБАВИТЬ СЕБЯ</span></button>
+        <div class="map-wrapper">
+          <div id="map"></div>
+        </div>
+      </div>
+
+      <div class="meterWall--blockBottom">
+        <div class="meterWall--blockBottom--results">
+          <h3>Всё происходит в реальном времени</h3>
+          <div class="meterWall--blockBottom--results-result">
+            <div>
+              <p>Ольга — Самара, Прыжок · 170 см</p>
+              <h4>11.07.2026</h4>
+            </div>
+            <div>
+              <p>Ольга — Самара, Прыжок · 170 см</p>
+              <h4>11.07.2026</h4>
+            </div>
+            <div>
+              <p>Ольга — Самара, Прыжок · 170 см</p>
+              <h4>11.07.2026</h4>
+            </div>
+            <div>
+              <p>Ольга — Самара, Прыжок · 170 см</p>
+              <h4>11.07.2026</h4>
+            </div>
+          </div>
+
+          <div class="meterWall--blockBottom--results--photo">
+            <img src="/assets/gallery/photos/4.png" />
+            <img src="/assets/gallery/photos/5.png" />
+            <img src="/assets/gallery/photos/6.png" />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
+  <script src="/javascript.js"></script>
 </html>

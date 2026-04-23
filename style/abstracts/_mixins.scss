@@ -19,6 +19,25 @@
   }
 }
 
+@mixin heading-yellow {
+  font-family: "UNCAGE";
+  color: $yellow;
+  font-size: 45px;
+
+  @include tablet {
+    font-size: 42px;
+  }
+
+  @include phone_1 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  @include phone_2 {
+    font-size: 30px;
+  }
+}
+
 /* АДАПТИВНАЯ ВЁРСТКА */
 
 @mixin desktop {

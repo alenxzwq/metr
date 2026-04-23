@@ -275,22 +275,7 @@ body {
     }
 
     & h2 {
-      font-family: "UNCAGE";
-      color: $yellow;
-      font-size: 45px;
-
-      @include tablet {
-        font-size: 42px;
-      }
-
-      @include phone_1 {
-        font-size: 30px;
-        line-height: 38px;
-      }
-
-      @include phone_2 {
-        font-size: 30px;
-      }
+      @include heading-yellow;
     }
 
     & p {
@@ -558,10 +543,10 @@ body {
     &-photo_one {
       width: 35vw;
       height: 18vw;
-      margin-top: clamp(-60px, -4vw, -20px); // от -60px до -20px
+      margin-top: clamp(-80px, -4vw, -20px); // от -60px до -20px
 
       @include desktop {
-        margin-top: -60px;
+        margin-top: -80px;
       }
 
       @include laptop {
@@ -608,7 +593,7 @@ body {
     &-photo_three {
       width: 27vw;
       height: 16vw;
-      margin-top: clamp(5px, 1.5vw, 30px);
+      margin-top: clamp(0px, 1.5vw, 30px);
 
       @include tablet {
         width: 37vw;
@@ -649,27 +634,7 @@ body {
   }
 
   & h2 {
-    font-family: "UNCAGE";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 45px;
-    line-height: 66px;
-
-    color: $yellow;
-
-    @include tablet {
-      font-size: 42px;
-    }
-
-    @include phone_1 {
-      font-size: 30px;
-      line-height: 38px;
-    }
-
-    @include phone_2 {
-      font-size: 30px;
-      line-height: 38px;
-    }
+    @include heading-yellow;
   }
 
   & p {
@@ -743,4 +708,343 @@ body {
       }
     }
   }
+}
+
+// _reviews.scss
+
+.reviews {
+  padding: 150px 0;
+  overflow: hidden;
+  margin-left: 120px;
+  margin-right: 120px;
+
+  @include tablet {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include phone_1 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include phone_2 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  & h2 {
+    @include heading-yellow;
+  }
+  // Контейнер для кастомного скролла
+  &__scroll-container {
+    position: relative;
+  }
+
+  // Обёртка с прокруткой (скрываем стандартную полосу)
+  &__wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+
+    // Скрываем стандартную полосу прокрутки
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none; // Chrome/Safari/Opera
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 24px;
+    padding: 50px 0px;
+    width: max-content;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  // Кастомная полоса прокрутки
+  &__scrollbar {
+    margin-top: 0px;
+    padding: 0 40px 0 0px; // ← добавляем отступы справа и слева для стрелок
+    position: relative;
+
+    @include phone_2 {
+      margin-top: 20px;
+    }
+  }
+
+  &__scrollbar-track {
+    background: #1a2626;
+    border-radius: 2px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+    width: 100%; // трек на всю доступную ширину
+
+    & img {
+      position: absolute;
+      right: -40px; // отступ справа от трека
+      top: 50%; // от верха родителя
+      transform: translateY(-50%); // центрируем по вертикали
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &__scrollbar-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: $yellow;
+    border-radius: 2px;
+    cursor: grab;
+    transition: background 0.2s ease;
+  }
+
+  // Остальные стили карточек (без изменений)
+  &__item {
+    flex-shrink: 0;
+    width: 400px;
+    height: 530px;
+
+    @include phone_2 {
+      width: 290px;
+      height: 370px;
+    }
+  }
+
+  &__card {
+    background: #1a2626;
+    border-radius: $button-border-radius;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    width: 400px;
+    height: 500px;
+    border: 2px solid $turquoise;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    @include phone_2 {
+      width: 290px;
+      height: 370px;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(31, 31, 31, 0.35);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 200px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    pointer-events: none;
+
+    @include phone_2 {
+      gap: 100px;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &__card:hover &__overlay {
+      opacity: 1;
+    }
+
+    &__card:hover &__photo img {
+      transform: scale(1.05);
+      filter: blur(3px);
+    }
+  }
+
+  &__card.is-active &__overlay {
+    opacity: 1;
+  }
+
+  &__card.is-active &__photo img {
+    transform: scale(1.05);
+    filter: blur(3px);
+  }
+
+  &__comment {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: left;
+
+    color: $white;
+
+    @include phone_2 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__result {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: left;
+
+    color: $white;
+
+    @include phone_2 {
+      font-size: 16px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 38px;
+
+    color: $white;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    @include phone_2 {
+      font-size: 16px;
+      padding: 4px 0;
+    }
+  }
+}
+
+.offer {
+  background: url(/assets/gallery/background/background_home_offer.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+
+  // Отступы по бокам
+  margin: 0 120px; // Отступы слева и справа
+
+  @include tablet {
+    margin: 0 0px;
+  }
+
+  @include phone_1 {
+    margin: 0 0px;
+  }
+
+  @include phone_2 {
+    margin: 0 0px;
+  }
+
+  &--content {
+    padding: 100px 0px 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 160px;
+
+    @include laptop {
+      gap: 80px;
+    }
+
+    @include tablet {
+      gap: 80px;
+    }
+
+    @include phone_1 {
+      gap: 40px;
+    }
+
+    @include phone_2 {
+      gap: 80px;
+    }
+
+    & h3 {
+      font-family: "UNCAGE";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 45px;
+      margin: 0px 180px 0 180px;
+      line-height: 64px;
+      text-align: center;
+      align-self: flex-start;
+      margin-top: 5%;
+
+      color: $white;
+
+      @include tablet {
+        font-size: 40px;
+      }
+
+      @include phone_1 {
+        font-size: 30px;
+        line-height: 35px;
+        margin: 0px 70px 0 70px;
+        margin-top: 10%;
+      }
+
+      @include phone_2 {
+        font-size: 24px;
+        line-height: 35px;
+        margin: 0px 30px 0 30px;
+        margin-top: 10%;
+      }
+    }
+  }
+}
+
+.meterWall {
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-top: 150px;
 }

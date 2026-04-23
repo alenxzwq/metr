@@ -46,3 +46,24 @@
     font-size: 13px;
   }
 }
+
+.offer-btn {
+  @include button-primary-yellow(13px 55px);
+  display: block;
+
+  @include tablet {
+    padding: 10px 25px;
+  }
+
+  @include phone_1 {
+    @include button-primary-yellow(10px 10px, 13px);
+    width: 265px;
+    font-size: 13px;
+  }
+
+  @include phone_2 {
+    @include button-primary-yellow(12px 10px, 14px);
+    width: 75%;
+    font-size: 13px;
+  }
+}
