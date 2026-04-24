@@ -1,0 +1,170 @@
+/* Оверлей затемнения */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(83, 83, 83, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 998;
+  display: none;
+}
+
+/* Модальное окно */
+.modalAdd {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 700px;
+  max-width: 90%;
+  background: $dark;
+  border-radius: $button-border-radius;
+  padding: 70px 30px 0px 90px;
+  z-index: 999;
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(35, 35, 35, 0.5);
+
+  @include phone_1 {
+    height: 650px;
+    padding: 50px 30px 0px 40px;
+  }
+
+  @include phone_2 {
+    height: 650px;
+    padding: 50px 20px 0px 20px;
+  }
+
+  & h3 {
+    font-family: "UNCAGE";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+
+    color: $yellow;
+
+    @include phone_1 {
+      font-size: 30px;
+      padding-right: 20%;
+    }
+
+    @include phone_2 {
+      font-size: 25px;
+      padding-right: 20%;
+      line-height: 30px;
+    }
+  }
+
+  &--close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    @include phone_1 {
+      width: 27px;
+      height: 27px;
+    }
+
+    @include phone_2 {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  &--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 50px;
+    padding-top: 20px;
+
+    gap: 20px;
+
+    @include phone_1 {
+      justify-content: center;
+      padding-right: 0;
+      margin-left: 0;
+    }
+
+    @include phone_2 {
+      justify-content: center;
+      padding-right: 0;
+      margin-left: 0;
+    }
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+
+      @include phone_1 {
+        margin-left: 0px;
+      }
+
+      @include phone_2 {
+        justify-content: center;
+        padding-right: 0;
+        margin-left: 0;
+      }
+
+      & input {
+        @include input($width: 490px, $height: 50px);
+
+        color: $white; /* Цвет вводимого текста */
+        font-size: 18px; /* Размер текста */
+        font-family: "Manrope", sans-serif; /* Шрифт */
+
+        @include phone_1 {
+          @include input($width: 400px, $height: 50px);
+        }
+
+        @include phone_2 {
+          @include input($width: 300px, $height: 50px);
+        }
+      }
+
+      & label {
+        @include label;
+
+        @include phone_2 {
+          font-size: 14px;
+        }
+      }
+
+      & select {
+        @include select;
+
+        color: $white; /* Цвет вводимого текста */
+        font-size: 18px; /* Размер текста */
+        font-family: "Manrope", sans-serif; /* Шрифт */
+
+        @include phone_1 {
+          @include select($width: 400px, $height: 50px);
+        }
+
+        @include phone_2 {
+          @include select($width: 300px, $height: 50px);
+        }
+      }
+    }
+
+    &-btn {
+      margin-top: 30px;
+    }
+  }
+}
+
+/* Когда модалка открыта - показываем */
+.modalAdd.show,
+#overlay.show {
+  display: block;
+}
+
+/* Запрет скролла */
+body.no-scroll {
+  overflow: hidden;
+}

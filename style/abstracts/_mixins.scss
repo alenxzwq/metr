@@ -19,6 +19,90 @@
   }
 }
 
+@mixin button-primary-turquoise($padding: 10px 22px, $font-size: 16px) {
+  background-color: $turquoise;
+  border-radius: $button-border-radius;
+  padding: $padding;
+
+  & span {
+    font-family: "UNCAGE";
+    font-weight: 400;
+    font-size: $font-size;
+    line-height: 20px;
+
+    letter-spacing: 0.11em;
+
+    color: $dark;
+
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background: darken($turquoise, 10%);
+  }
+}
+
+@mixin input($width: 490px, $height: 50px) {
+  box-sizing: border-box;
+
+  width: $width;
+  height: $height;
+
+  background: rgba(243, 243, 243, 0.3);
+  border-bottom: 3px solid #35c8b5;
+  border-radius: 5px;
+
+  padding-left: 10px;
+
+  &::placeholder {
+    color: rgb(185, 185, 185);
+  }
+}
+
+@mixin label($width: 490px, $height: 50px) {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+
+  color: $white;
+}
+
+@mixin select($width: 490px, $height: 50px) {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Базовый фон (цвет) */
+  background-color: rgba(243, 243, 243, 0.3);
+
+  /* Иконка стрелки */
+  background-image: url("/assets/gallery/icon/arrow_selection.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px 16px;
+
+  /* Отступ справа, чтобы текст не наезжал на стрелку */
+  padding-right: 40px;
+
+  box-sizing: border-box;
+
+  width: $width;
+  height: $height;
+
+  border-bottom: 3px solid #35c8b5;
+  border-radius: 5px;
+
+  padding-left: 10px;
+
+  & option {
+    color: #ffffff; /* Цвет текста опций */
+    background-color: #1a1a2e; /* Цвет фона опций */
+  }
+}
+
 @mixin heading-yellow {
   font-family: "UNCAGE";
   color: $yellow;

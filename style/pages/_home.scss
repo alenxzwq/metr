@@ -1,5 +1,6 @@
 body {
   background-color: $dark;
+  position: relative;
 }
 
 .promoblock {
@@ -1047,4 +1048,324 @@ body {
   margin-left: 120px;
   margin-right: 120px;
   padding-top: 150px;
+
+  @include tablet {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include phone_1 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include phone_2 {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  &--blockTop {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      display: block;
+    }
+
+    &--header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      @include phone_1 {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+    }
+
+    &--heading {
+      h2 {
+        @include heading-yellow;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 40px;
+        color: #e7e7e7;
+
+        @include tablet {
+          font-size: 22px;
+        }
+
+        @include phone_1 {
+          font-size: 18px;
+        }
+
+        @include phone_2 {
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+    }
+
+    // Общие стили для обеих кнопок
+    &--button {
+      flex-shrink: 0;
+
+      @include phone_1 {
+        width: 100%;
+      }
+    }
+
+    // Десктопная кнопка (внутри header)
+    &--button-desktop {
+      @include tablet {
+        display: none; // Скрываем на мобилках
+      }
+
+      @include phone_1 {
+        display: none; // Скрываем на мобилках
+      }
+
+      @include phone_2 {
+        display: none; // Скрываем на мобилках
+      }
+    }
+
+    // Мобильная кнопка (после карты)
+    &--button-mobile {
+      display: none; // Скрыта по умолчанию
+      margin-top: 20px;
+
+      @include tablet {
+        display: block;
+        align-self: center; // Показываем на мобилках
+      }
+
+      @include phone_1 {
+        display: block; // Показываем на мобилках
+      }
+
+      @include phone_2 {
+        display: block; // Показываем на мобилках
+      }
+    }
+
+    &--mapWrapper {
+      background: #1a2626;
+      margin-bottom: 20px;
+      border-radius: $button-border-radius;
+      position: relative; // Добавить
+      overflow: hidden; // Добавить - обрезает если что-то вылезает
+
+      @include phone_2 {
+        margin-left: -30px; // Для маленьких телефонов
+        margin-right: -30px;
+
+        border-radius: 0;
+      }
+
+      &-map {
+        height: 650px;
+        width: 100%;
+        border-radius: $button-border-radius;
+        background: #1e2b2b;
+        position: relative; // Добавить
+        z-index: 1; // Добавить
+
+        @include tablet {
+          height: 500px;
+        }
+
+        @include phone_1 {
+          height: 500px;
+        }
+
+        @include phone_2 {
+          height: 400px;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  &--blockBottom {
+    & h3 {
+      font-family: "UNCAGE";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 35px;
+
+      padding-top: 35px;
+
+      color: $yellow;
+
+      @include laptop {
+        padding-right: 40%;
+      }
+
+      @include phone_1 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      @include phone_2 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+
+    &--results {
+      &-result {
+        display: flex;
+        flex-direction: column;
+        padding-top: 25px;
+
+        & div {
+          display: flex;
+          gap: 260px;
+
+          @include laptop {
+            gap: 15%;
+          }
+
+          @include tablet {
+            gap: 0%;
+            justify-content: space-between;
+          }
+
+          @include phone_1 {
+            gap: 0%;
+            justify-content: space-between;
+          }
+
+          @include phone_2 {
+            gap: 5%;
+            flex-wrap: wrap;
+          }
+
+          & p {
+            font-family: "Manrope";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 34px;
+
+            color: $white;
+
+            @include phone_1 {
+              font-size: 18px;
+            }
+
+            @include phone_2 {
+              font-size: 16px;
+            }
+          }
+
+          & h4 {
+            font-family: "Manrope";
+            font-style: normal;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 34px;
+
+            color: $white;
+            align-self: start;
+
+            @include phone_1 {
+              font-size: 18px;
+            }
+
+            @include phone_2 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      &--photo {
+        display: flex;
+        gap: 25px;
+
+        position: relative;
+        border-radius: $button-border-radius;
+
+        &-one {
+          width: 28%;
+          height: auto;
+          aspect-ratio: 355 / 481;
+          border-radius: $button-border-radius;
+          margin-top: 2%;
+
+          @include tablet {
+            width: 50%;
+            height: 550px;
+          }
+          @include phone_1 {
+            width: 50%;
+            height: 40%;
+          }
+
+          @include phone_2 {
+            width: 100%;
+            height: auto;
+            margin-top: 5%;
+          }
+        }
+
+        &-two {
+          width: 30%;
+          height: auto;
+          aspect-ratio: 380 / 428;
+          border-radius: $button-border-radius;
+          margin-top: 8%;
+
+          @include tablet {
+            width: 50%;
+            height: 500px;
+          }
+
+          @include phone_1 {
+            width: 50%;
+            height: 40%;
+          }
+
+          @include phone_2 {
+            display: none;
+          }
+        }
+
+        &-three {
+          width: 600px;
+          height: 487px;
+          border-radius: $button-border-radius;
+          margin-top: -200px;
+
+          @include laptop {
+            width: 500px;
+            height: 387px;
+          }
+
+          @include tablet {
+            display: none;
+          }
+
+          @include phone_1 {
+            display: none;
+          }
+
+          @include phone_2 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }

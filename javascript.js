@@ -195,3 +195,118 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  ymaps.ready(init);
+
+  function init() {
+    var map = new ymaps.Map("russiaMap", {
+      center: [62.0, 100.0],
+      zoom: 4,
+      controls: ["zoomControl", "fullscreenControl"],
+    });
+
+    // Координаты городов
+    var cities = {
+      Москва: [55.7558, 37.6176],
+      Казань: [55.7887, 49.1221],
+      Волгоград: [48.708, 44.5133],
+      Уфа: [54.7355, 55.9919],
+      "Санкт-Петербург": [59.9343, 30.3351],
+    };
+
+    // Массив для хранения точек
+    var points = [];
+
+    // Функция добавления точки
+    function addPoint(city, name, activity, result) {
+      var coords = cities[city];
+      if (!coords) return;
+
+      var placemark = new ymaps.Placemark(
+        coords,
+        {
+          hintContent: `${name}: ${result} км (${activity})`,
+          balloonContent: `
+                    <strong>${name}</strong><br>
+                    Город: ${city}<br>
+                    Активность: ${activity}<br>
+                    Результат: ${result} км<br>
+                    Дата: ${new Date().toLocaleDateString("ru-RU")}
+                `,
+        },
+        {
+          preset: "islands#redSportIcon",
+          draggable: false,
+        },
+      );
+
+      map.geoObjects.add(placemark);
+      points.push(placemark);
+    }
+
+    // Добавляем демо-точки (можно удалить)
+    addPoint("Москва", "Алексей", "Бег", "42");
+    addPoint("Санкт-Петербург", "Мария", "Прыжок", "170");
+    addPoint("Казань", "Дмитрий", "Бросок", "35");
+
+    // Модальное окно и форма (ваш существующий код)
+    var modal = document.querySelector(".modalAdd");
+    var overlay = document.getElementById("overlay");
+    var fixButtons = document.querySelectorAll(".meterWallBtn");
+    var closeBtn = document.querySelector(".modalAdd--close");
+    var form = document.querySelector(".modalAdd--form");
+
+    function openModal() {
+      if (modal) modal.style.display = "block";
+      if (overlay) overlay.style.display = "block";
+    }
+
+    function closeModal() {
+      if (modal) modal.style.display = "none";
+      if (overlay) overlay.style.display = "none";
+      if (form) form.reset();
+    }
+
+    fixButtons.forEach((btn) => {
+      btn.addEventListener("click", openModal);
+    });
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (overlay) overlay.addEventListener("click", closeModal);
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var citySelect = document.getElementById("city");
+        var city = citySelect?.options[citySelect.selectedIndex]?.text;
+        var result = document.getElementById("number").value;
+        var activitySelect = document.getElementById("activity");
+        var activity =
+          activitySelect?.options[activitySelect.selectedIndex]?.text;
+
+        if (
+          !name ||
+          !city ||
+          !result ||
+          !activity ||
+          city === "-- Выберите из списка --"
+        ) {
+          alert("Пожалуйста, заполните все поля");
+          return;
+        }
+
+        addPoint(city, name, activity, result);
+        closeModal();
+        alert(`Спасибо, ${name}! Ваш результат добавлен`);
+      });
+    }
+
+    // Фикс размера
+    setTimeout(function () {
+      map.container.fitToViewport();
+    }, 100);
+  }
+});

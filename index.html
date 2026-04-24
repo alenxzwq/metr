@@ -6,9 +6,13 @@
     <title>МЕТР</title>
 
     <link rel="stylesheet" href="/style/style.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=25288a28-2bbd-44ec-8531-4476453c6249
+&lang=ru_RU"
+      type="text/javascript"
+    ></script>
   </head>
-  <body>
+  <body class="backgroundModal">
     <section class="promoblock">
       <header class="header">
         <img class="header--logo" src="/assets/gallery/icon/logo.png" />
@@ -367,14 +371,25 @@
 
     <section class="meterWall">
       <div class="meterWall--blockTop">
-        <div class="meterWall--blockTop--heading">
-          <h2>СТЕНА МЕТРА</h2>
-          <p>Приближай карту, находи участников, добавляй свой метр</p>
+        <div class="meterWall--blockTop--header">
+          <div class="meterWall--blockTop--heading">
+            <h2>Стена метра</h2>
+            <p>Всё происходит в реальном времени</p>
+          </div>
+          <button
+            class="meterWall--blockTop--button meterWall--blockTop--button-desktop meterWallBtn"
+          >
+            <span>Зафиксировать результат</span>
+          </button>
         </div>
-        <button><span>ДОБАВИТЬ СЕБЯ</span></button>
-        <div class="map-wrapper">
-          <div id="map"></div>
+        <div class="meterWall--blockTop--mapWrapper">
+          <div class="meterWall--blockTop--mapWrapper-map" id="russiaMap"></div>
         </div>
+        <button
+          class="meterWall--blockTop--button meterWall--blockTop--button-mobile meterWallBtn"
+        >
+          <span>Зафиксировать результат</span>
+        </button>
       </div>
 
       <div class="meterWall--blockBottom">
@@ -400,13 +415,79 @@
           </div>
 
           <div class="meterWall--blockBottom--results--photo">
-            <img src="/assets/gallery/photos/4.png" />
-            <img src="/assets/gallery/photos/5.png" />
-            <img src="/assets/gallery/photos/6.png" />
+            <img
+              class="meterWall--blockBottom--results--photo-one"
+              src="/assets/gallery/photos/4.png"
+            />
+            <img
+              class="meterWall--blockBottom--results--photo-two"
+              src="/assets/gallery/photos/5.png"
+            />
+            <img
+              class="meterWall--blockBottom--results--photo-three"
+              src="/assets/gallery/photos/6.png"
+            />
           </div>
         </div>
       </div>
     </section>
+
+    <article class="modalAdd">
+      <h3>ДОБАВИТЬ СВОЙ МЕТР НА КАРТУ</h3>
+      <img class="modalAdd--close" src="/assets/gallery/icon/close.svg" />
+      <form class="modalAdd--form">
+        <div class="modalAdd--form-group">
+          <label for="name">Имя</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Введите ваше имя"
+            required
+          />
+        </div>
+
+        <div class="modalAdd--form-group">
+          <label for="city">Город</label>
+          <select id="city" name="city">
+            <option value="" disabled selected>-- Выберите из списка --</option>
+            <option value="masterclass">Москва</option>
+            <option value="lecture">Казань</option>
+            <option value="workshop">Волгоград</option>
+            <option value="concert">Уфа</option>
+            <option value="exhibition">Санкт-Петербург</option>
+          </select>
+        </div>
+
+        <div class="modalAdd--form-group">
+          <label for="number">Результат (метры)</label>
+          <input
+            type="number"
+            id="number"
+            name="number"
+            placeholder="40"
+            required
+          />
+        </div>
+
+        <div class="modalAdd--form-group">
+          <label for="activity">Активности</label>
+          <select id="activity" name="activity">
+            <option value="" disabled selected>-- Выберите из списка --</option>
+            <option value="masterclass">Шаг</option>
+            <option value="lecture">Бег</option>
+            <option value="workshop">Прыжок</option>
+            <option value="concert">Бросок</option>
+          </select>
+        </div>
+
+        <button type="submit" class="modalAdd--form-btn btnModal">
+          <span>ЗАФИКСИРОВАТЬ РЕЗУЛЬТАТ</span>
+        </button>
+      </form>
+    </article>
+
+    <div id="overlay"></div>
   </body>
   <script src="/javascript.js"></script>
 </html>
