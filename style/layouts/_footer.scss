@@ -1,0 +1,116 @@
+.footer {
+  margin-left: 120px;
+  margin-bottom: 50px;
+
+  @include tablet {
+    margin-left: 50px;
+  }
+
+  @include phone_1 {
+    margin-left: 50px;
+  }
+
+  @include phone_2 {
+    margin-left: 20px;
+  }
+
+  &--logo {
+    display: flex;
+    gap: 15px;
+
+    & img {
+      width: 60px;
+      height: 75px;
+    }
+
+    & p {
+      font-family: "UNCAGE";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: 0.11em;
+
+      color: $white;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-top: 60px;
+
+    @include phone_2 {
+      gap: 50px;
+    }
+  }
+
+  &__title {
+    font-family: "UNCAGE";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 32px;
+    /* identical to box height */
+    letter-spacing: 0.11em;
+
+    color: $white;
+  }
+
+  &__list {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 45px;
+    /* or 208% */
+    letter-spacing: 0.11em;
+
+    color: $white;
+
+    word-wrap: break-word; // перенос длинных слов
+
+    white-space: normal;
+
+    @include phone_2 {
+      font-size: 17px;
+    }
+  }
+
+  &__socialMedia {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding-right: 120px;
+    gap: 45px;
+
+    @include desktop {
+      margin-top: 100px;
+    }
+
+    @include tablet {
+      margin-top: 100px;
+    }
+
+    @include phone_1 {
+      margin-top: 100px;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    @include phone_2 {
+      margin-top: 100px;
+      justify-content: space-around;
+      align-items: center;
+      padding-right: 0;
+    }
+
+    & img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}

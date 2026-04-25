@@ -1770,3 +1770,38 @@ body {
     }
   }
 }
+
+.rule {
+  padding-top: 500px;
+  background-image: url(/assets/gallery/background/rule_footer.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  // height: 300px; // ❌ Удалить
+  max-width: 1600px;
+  min-height: 50px; // ✅ Минимальная высота вместо фиксированной
+  margin: 0 auto;
+
+  @include desktop {
+    max-width: 2000px;
+  }
+
+  @include tablet {
+    background-image: url(/assets/gallery/background/rule_footer.svg);
+    max-width: 1200px;
+    padding-top: 300px;
+  }
+
+  @include phone_1 {
+    background-image: url(/assets/gallery/background/rule_footer_tablet.svg);
+    max-width: 1200px;
+    padding-top: 400px;
+  }
+
+  @include phone_2 {
+    background-image: url(/assets/gallery/background/rule_footer_mobile.svg);
+    max-width: 500px;
+    padding-top: 300px;
+  }
+}

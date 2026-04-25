@@ -88,6 +88,12 @@
 
   margin-top: 40px;
 
+  @include tablet {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   @include phone_1 {
     width: 350px;
     margin-left: auto;
