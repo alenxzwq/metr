@@ -80,3 +80,23 @@
 .btnModal {
   @include button-primary-turquoise(13px 28px, 14px);
 }
+
+.appealBtn {
+  @include button-primary-turquoise(12px 28px, 14px);
+  margin-left: auto; // Прижимает кнопку к правому краю
+  display: block;
+
+  margin-top: 40px;
+
+  @include phone_1 {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include phone_2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+}

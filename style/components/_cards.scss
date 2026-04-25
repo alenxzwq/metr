@@ -1,0 +1,19 @@
+.appeal--cards-card {
+  @include card($font-family: "Manrope");
+
+  @include desktop {
+    @include card($font-family: "Manrope", $width: 23%, $height: 215px);
+  }
+
+  @include laptop {
+    @include card($font-family: "Manrope", $width: 420px, $height: 215px);
+  }
+
+  @include tablet {
+    @include card($font-family: "Manrope", $width: 400px, $height: 215px);
+  }
+
+  @include phone_1 {
+    @include card($font-family: "Manrope", $width: 350px, $height: 215px);
+  }
+}

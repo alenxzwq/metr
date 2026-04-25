@@ -122,6 +122,41 @@
   }
 }
 
+@mixin card($font-family: "Manrope", $width: 303px, $height: 215px) {
+  width: $width;
+  height: $height;
+  padding: 30px 20px 20px 40px;
+
+  background: $dark-card;
+  border: 2px solid $turquoise;
+  border-radius: $button-border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  & h6 {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 25px;
+
+    color: #f8ec46;
+  }
+
+  & p {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    padding-top: 20px;
+
+    color: $white;
+  }
+}
+
 /* АДАПТИВНАЯ ВЁРСТКА */
 
 @mixin desktop {
