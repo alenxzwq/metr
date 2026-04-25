@@ -1,0 +1,132 @@
+.information {
+  background: url(/assets/gallery/background/background_activity_promoblock.png);
+  padding: 50px 0px 120px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  @include phone_2 {
+    padding: 50px 0px 50px 0px;
+  }
+
+  &__heading {
+    font-family: "UNCAGE";
+    font-size: 45px;
+    font-weight: 600;
+    color: $white;
+
+    text-align: center;
+    margin-top: 120px;
+
+    @include tablet {
+      font-size: 45px;
+    }
+
+    @include phone_1 {
+      font-size: 35px;
+    }
+
+    @include phone_2 {
+      font-size: 24px;
+    }
+  }
+
+  &--text {
+    font-family: "Manrope";
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 34px;
+    color: $white;
+    text-align: center;
+
+    @include phone_2 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &--activitesGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+
+    @include tablet {
+      gap: 100px;
+    }
+
+    margin-top: 50px;
+
+    @include phone_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      gap: 40px;
+    }
+
+    @include phone_2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      gap: 40px;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        opacity: 0.9;
+
+        @include tablet {
+          width: 80px;
+          height: 80px;
+        }
+
+        @include phone_2 {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      & p {
+        font-family: "UNCAGE";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 33px;
+        margin-top: 15px;
+
+        color: #f4f4f4;
+
+        @include tablet {
+          font-size: 22px;
+          margin-top: 10px;
+        }
+
+        @include phone_2 {
+          font-size: 20px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  &--btnGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 100px;
+
+    @include phone_2 {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

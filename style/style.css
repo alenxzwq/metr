@@ -3246,7 +3246,7 @@ body {
   }
 }
 
-body {
+.regPadding {
   margin-top: 30px;
 }
 
@@ -3461,4 +3461,139 @@ body {
   margin-top: 100px;
   margin-bottom: 100px;
   background: #f8ec46;
+}
+
+.information {
+  background: url(/assets/gallery/background/background_activity_promoblock.png);
+  padding: 50px 0px 120px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .information {
+    padding: 50px 0px 50px 0px;
+  }
+}
+.information__heading {
+  font-family: "UNCAGE";
+  font-size: 45px;
+  font-weight: 600;
+  color: #f0f0f0;
+  text-align: center;
+  margin-top: 120px;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .information__heading {
+    font-size: 45px;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .information__heading {
+    font-size: 35px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .information__heading {
+    font-size: 24px;
+  }
+}
+.information--text {
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 34px;
+  color: #f0f0f0;
+  text-align: center;
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .information--text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.information--activitesGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .information--activitesGroup {
+    gap: 100px;
+  }
+}
+.information--activitesGroup {
+  margin-top: 50px;
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .information--activitesGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .information--activitesGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px;
+  }
+}
+.information--activitesGroup div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.information--activitesGroup div img {
+  opacity: 0.9;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .information--activitesGroup div img {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .information--activitesGroup div img {
+    width: 80px;
+    height: 80px;
+  }
+}
+.information--activitesGroup div p {
+  font-family: "UNCAGE";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 33px;
+  margin-top: 15px;
+  color: #f4f4f4;
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .information--activitesGroup div p {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .information--activitesGroup div p {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+}
+.information--btnGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 100px;
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .information--btnGroup {
+    flex-direction: column;
+    gap: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */
