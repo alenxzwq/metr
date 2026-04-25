@@ -1,0 +1,54 @@
+.reg--container--form-group {
+  & input {
+    @include input($width: 550px, $height: 50px);
+
+    color: $white; /* Цвет вводимого текста */
+    font-size: 18px; /* Размер текста */
+    font-family: "Manrope", sans-serif; /* Шрифт */
+
+    @include laptop {
+      width: 450px;
+    }
+
+    @include phone_1 {
+      width: 400px;
+    }
+
+    @include phone_2 {
+      width: 330px;
+    }
+  }
+
+  & label {
+    @include label;
+  }
+}
+
+.groupPassword {
+  display: flex;
+  flex-direction: column;
+  & input {
+    @include input($width: 270px, $height: 50px);
+
+    color: $white; /* Цвет вводимого текста */
+    font-size: 18px; /* Размер текста */
+    font-family: "Manrope", sans-serif; /* Шрифт */
+
+    @include laptop {
+      width: 100%;
+    }
+
+    @include phone_1 {
+      flex-direction: column;
+      width: 400px;
+    }
+
+    @include phone_2 {
+      width: 330px;
+    }
+  }
+
+  & label {
+    @include label;
+  }
+}

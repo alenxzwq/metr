@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МЕТР</title>
+
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img class="header--logo" src="/assets/gallery/icon/logo.png" />
+      <nav class="header--navigation">
+        <ul class="header--navigation--list">
+          <li><a>О фестивале</a></li>
+          <li><a>Активности</a></li>
+          <li><a>Впечатления</a></li>
+          <li><a>Стена метра</a></li>
+          <li><a>Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="btn-headerReg" style="visibility: hidden">
+        <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+      </button>
+
+      <div class="header--groupIcon">
+        <img
+          style="visibility: hidden"
+          src="/assets/gallery/icon/user-add.svg"
+        />
+        <img src="/assets/gallery/icon/burger.svg" />
+      </div>
+    </header>
+
+    <section class="reg">
+      <div class="reg--photo"><img src="/assets/gallery/photos/16.png" /></div>
+
+      <div class="reg--container">
+        <h2>РЕГИСТРАЦИЯ</h2>
+        <form class="reg--container--form">
+          <div class="reg--container--form-group">
+            <label for="name">Имя</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Введите ваше имя"
+              required
+            />
+          </div>
+
+          <div class="reg--container--form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your_email@.ru"
+              required
+            />
+          </div>
+
+          <div class="reg--container--formPassword">
+            <div class="groupPassword">
+              <label for="password">Пароль</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder=""
+                required
+              />
+            </div>
+
+            <div class="groupPassword">
+              <label for="repeatPassword">Повторите пароль</label>
+              <input
+                type="password"
+                name="repeatPassword"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+
+          <div class="reg--container--form-checkBox">
+            <input type="checkbox" id="agree" />
+            <label for="agree">Согласие на обработку персональных данных</label>
+          </div>
+
+          <button type="submit" class="btnReg">
+            <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+          </button>
+
+          <div class="reg--container--form-socialMedia">
+            <p>Или зарегистрируйтесь с помощью</p>
+            <div class="">
+              <img src="/assets/gallery/icon/vk.svg" alt="VK" />
+
+              <img src="/assets/gallery/icon/telegramm.svg" alt="Telegram" />
+              <img src="/assets/gallery/icon/google.svg" alt="TikTok" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div id class="line"></div>
+
+    <footer class="footer">
+      <div class="footer--logo">
+        <img src="/assets/gallery/icon/logo.png" />
+        <p>
+          Фестиваль, где твой личный <br />
+          прогресс важнее победы. <br />
+          Здесь не проигрывают. <br />
+          Здесь фиксируют путь.
+        </p>
+      </div>
+
+      <div class="footer__group">
+        <div class="footer__column">
+          <h4 class="footer__title">Фестиваль</h4>
+          <ul class="footer__list">
+            <li><a href="#">О фестивале</a></li>
+            <li><a href="#">Активности</a></li>
+            <li><a href="#">Стена метра</a></li>
+            <li><a href="#">Карта проведения</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 2: История -->
+        <div class="footer__column">
+          <h4 class="footer__title">История</h4>
+          <ul class="footer__list">
+            <li><a href="#">Фестиваль в цифрах</a></li>
+            <li><a href="#">Как всё началось</a></li>
+            <li><a href="#">Истории участников</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 3: Участникам -->
+        <div class="footer__column">
+          <h4 class="footer__title">Участникам</h4>
+          <ul class="footer__list">
+            <li><a href="#">Регистрация</a></li>
+            <li><a href="#">Мои результаты</a></li>
+            <li><a href="#">Мои значки</a></li>
+            <li><a href="#">Правила участия</a></li>
+          </ul>
+        </div>
+
+        <!-- Колонка 4: Организаторам -->
+        <div class="footer__column">
+          <h4 class="footer__title">Организаторам</h4>
+          <ul class="footer__list">
+            <li><a href="#">Стать волонтёром</a></li>
+            <li><a href="#">Предложить площадку</a></li>
+            <li><a href="#">Стать партнёром</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__title">Контакты</h4>
+          <ul class="footer__list">
+            <li><a href="#">Общие вопросы: hello@metr-fest.ru</a></li>
+            <li><a href="#">Сотрудничество: partners@metr-fest.ru</a></li>
+            <li><a href="#">Пресса: press@metr-fest.ru</a></li>
+            <li><a href="#">Техподдержка: support@metr-fest.ru</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__socialMedia">
+        <img src="/assets/gallery/icon/vk.svg" alt="VK" />
+        <img src="/assets/gallery/icon/instagramm.svg" alt="Instagram" />
+        <img src="/assets/gallery/icon/telegramm.svg" alt="Telegram" />
+        <img src="/assets/gallery/icon/tik tok.svg" alt="TikTok" />
+      </div>
+    </footer>
+  </body>
+</html>

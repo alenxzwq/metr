@@ -1,0 +1,195 @@
+body {
+  margin-top: 30px;
+}
+
+.reg {
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    justify-content: center;
+  }
+
+  @include phone_1 {
+    justify-content: center;
+  }
+
+  @include phone_2 {
+    justify-content: center;
+  }
+
+  @include laptop {
+    margin-left: 80px;
+    margin-right: 140px;
+  }
+
+  &--photo {
+    width: 50%;
+    height: 55%;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include phone_1 {
+      display: none;
+    }
+
+    @include phone_2 {
+      display: none;
+    }
+
+    & img {
+      border-radius: 5px;
+
+      @include laptop {
+        width: 1000px;
+        height: 600px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & h2 {
+      @include heading-yellow;
+
+      @include laptop {
+        font-size: 30px;
+      }
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 20px;
+
+      &-group {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+      }
+
+      &-checkBox {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include phone_2 {
+          display: flex;
+          margin-left: 40px;
+        }
+
+        & input {
+          appearance: none; // Убираем стандартный вид
+          -webkit-appearance: none;
+          width: 25px;
+          height: 25px;
+          border: 2px solid $yellow;
+          border-radius: 4px;
+          cursor: pointer;
+          position: relative;
+
+          @include phone_2 {
+            display: block;
+            width: 45px;
+            height: 30px;
+          }
+
+          // Кастомная галочка
+          &:checked {
+            &::after {
+              content: "✓";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: $yellow;
+              font-size: 20px;
+            }
+          }
+        }
+
+        & label {
+          @include label;
+
+          @include phone_1 {
+            line-height: 20px;
+          }
+
+          @include phone_2 {
+            display: block;
+          }
+        }
+      }
+
+      &-socialMedia {
+        margin-top: 15px;
+        & p {
+          font-family: "Manrope";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 23px;
+          letter-spacing: 0.05em;
+
+          color: $white;
+        }
+
+        & div {
+          display: flex;
+          gap: 50px;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+
+          & img {
+            width: 45px;
+            height: 45px;
+          }
+        }
+      }
+    }
+
+    &--formPassword {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; // Или center
+      gap: 20px;
+      width: 100%;
+
+      @include phone_1 {
+        flex-direction: column;
+        width: auto;
+      }
+
+      @include phone_2 {
+        flex-direction: column;
+        width: auto;
+      }
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  height: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  background: $yellow;
+}

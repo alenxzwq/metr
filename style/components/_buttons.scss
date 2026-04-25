@@ -26,6 +26,10 @@
   }
 }
 
+.btn-headerReg {
+  @include button-primary-yellow(10px 22px, 3px);
+}
+
 .promoblock-btn {
   @include button-primary-yellow(12px 30px);
   display: block;
@@ -104,5 +108,16 @@
     margin-left: auto;
     margin-right: auto;
     width: 95%;
+  }
+}
+
+.btnReg {
+  @include button-primary-yellow(12px 10px, 15px);
+  width: 415px;
+
+  margin-top: 40px;
+
+  @include phone_2 {
+    width: 330px;
   }
 }
