@@ -1369,3 +1369,305 @@ body {
     }
   }
 }
+
+.gallery {
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-top: 150px;
+
+  & h2 {
+    @include heading-yellow;
+  }
+
+  & p {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+
+    color: #e7e7e7;
+
+    @include tablet {
+      font-size: 22px;
+    }
+
+    @include phone_1 {
+      font-size: 18px;
+    }
+
+    @include phone_2 {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  &__scroll {
+    margin-top: 50px;
+    // На десктопе — без скролла
+    overflow-x: visible;
+    overflow-y: visible;
+
+    @include phone_1 {
+      margin-top: -10px;
+    }
+
+    @include phone_2 {
+      margin-top: -20px;
+    }
+
+    // Кастомная полоса прокрутки (будет работать только когда скролл включен)
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #1a2626;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #4ecdc4;
+      border-radius: 10px;
+    }
+  }
+
+  &--photos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    // На десктопе ширина не max-content, а 100% (чтобы ряды могли переноситься)
+    width: 100%;
+  }
+
+  &--photos-row {
+    display: flex;
+    flex-wrap: nowrap; // Позволяет переносить фото внутри ряда
+    gap: 15px;
+    justify-content: flex-start; // Или space-between, как нужно
+    align-items: flex-end;
+
+    img {
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: $button-border-radius;
+
+      @include desktop {
+        flex: 1; // Растягиваются равномерно
+        min-width: 150px; // Минимальная ширина
+        height: auto; // Автоматическая высота
+        object-fit: cover;
+      }
+
+      @include laptop {
+        flex: 1; // Растягиваются равномерно
+        min-width: 150px; // Минимальная ширина
+        height: auto; // Автоматическая высота
+        object-fit: cover;
+      }
+    }
+  }
+
+  // --- Планшеты и телефоны (включаем скролл) ---
+  @media (max-width: 1199px) {
+    margin-left: 40px;
+    margin-right: 40px;
+
+    &__scroll {
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    &--photos {
+      width: max-content; // Ширина по содержимому — скролл
+    }
+
+    &--photos-row {
+      flex-wrap: nowrap; // Запрещаем перенос — появляется скролл
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  // Размеры фото (оставляем как у вас)
+  &--photos-one {
+    width: 338px;
+    height: 350px;
+
+    @include desktop {
+      flex: 1.2;
+      aspect-ratio: 338 / 350;
+    }
+
+    @include laptop {
+      flex: 1.2;
+      aspect-ratio: 338 / 350;
+    }
+
+    @include phone_2 {
+      width: 308px;
+      height: 320px;
+    }
+  }
+  &--photos-two {
+    width: 320px;
+    height: 300px;
+
+    @include desktop {
+      flex: 1.1;
+      aspect-ratio: 320 / 300;
+    }
+  }
+  &--photos-three {
+    width: 250px;
+    height: 330px;
+
+    @include desktop {
+      flex: 0.9;
+      aspect-ratio: 200 / 230;
+    }
+
+    @include laptop {
+      flex: 0.9;
+      aspect-ratio: 270 / 290;
+    }
+  }
+  &--photos-four {
+    width: 400px;
+    height: 380px;
+
+    @include desktop {
+      flex: 1.4;
+      aspect-ratio: 400 / 380;
+    }
+
+    @include laptop {
+      flex: 1.4;
+      aspect-ratio: 500 / 450;
+    }
+  }
+
+  &--photos-five {
+    width: 400px;
+    height: 240px;
+    align-self: flex-start;
+
+    @include desktop {
+      flex: 1.3;
+      aspect-ratio: 400 / 240;
+      align-self: flex-start;
+    }
+
+    @include phone_2 {
+      width: 320px;
+      height: 300px;
+    }
+  }
+
+  &--photos-six {
+    width: 300px;
+    height: 400px;
+
+    @include desktop {
+      flex: 1;
+      aspect-ratio: 300 / 400;
+    }
+  }
+
+  &--photos-seven {
+    width: 370px;
+    height: 300px;
+    align-self: flex-start;
+
+    @include desktop {
+      flex: 1.2;
+      aspect-ratio: 370 / 300;
+      align-self: flex-start;
+    }
+  }
+
+  &--photos-eight {
+    width: 240px;
+    height: 240px;
+    align-self: flex-start;
+
+    @include desktop {
+      flex: 0.8;
+      aspect-ratio: 240 / 240;
+      align-self: flex-start;
+    }
+  }
+
+  &--socialMedia {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 30px;
+
+    @include tablet {
+      margin-top: 30px;
+    }
+
+    @include phone_1 {
+      margin-top: 30px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    @include phone_2 {
+      margin-top: 30px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    &-icons {
+      display: flex;
+      gap: 50px;
+      justify-content: flex-end; // Иконки справа
+
+      @include phone_1 {
+        justify-content: flex-start;
+      }
+
+      img {
+        width: 45px;
+        height: 45px;
+
+        @include phone_2 {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      @include phone_1 {
+        justify-content: space-between;
+        gap: 50px;
+      }
+
+      @include phone_2 {
+        justify-content: space-between;
+        gap: 60px;
+      }
+    }
+
+    & p {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 34px;
+      color: $white;
+      text-align: left; // Текст выровнять вправо
+
+      @include phone_2 {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+  }
+}
