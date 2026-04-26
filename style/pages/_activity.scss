@@ -130,3 +130,334 @@
     }
   }
 }
+
+.activity {
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  @include laptop {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+  @include tablet {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  @include phone_2 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  &--cards {
+    display: flex;
+    align-items: stretch;
+    justify-content: center; // чтобы все элементы были одной высоты
+    gap: 10px;
+    margin-bottom: 10px;
+
+    flex-wrap: wrap;
+
+    @include phone_1 {
+      // Скрываем последнюю фотографию в каждом ряду
+      .activity--cards-photo:last-child {
+        display: none;
+      }
+    }
+
+    @include phone_2 {
+      // Скрываем последнюю фотографию в каждом ряду
+      .activity--cards-photo:last-child {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      margin-top: -30px;
+
+      @include tablet {
+        margin-top: 0px;
+      }
+
+      @include phone_1 {
+        margin-top: 0px;
+      }
+
+      @include phone_2 {
+        margin-top: 0px;
+      } // у последнего ряда отступа нет
+    }
+
+    // Верхний ряд — фото прижаты к верху
+    &--top {
+      .activity--cards-photo {
+        align-self: flex-start; // прижимаем к верху
+      }
+      .activity--cards-card {
+        align-self: flex-start; // карточки по центру
+      }
+    }
+
+    // Нижний ряд — фото прижаты к низу
+    &--bottom {
+      .activity--cards-photo {
+        align-self: flex-end; // прижимаем к низу
+      }
+      .activity--cards-card {
+        align-self: flex-end; // карточки по центру
+      }
+    }
+
+    &-photo {
+      width: 300px;
+      height: 220px;
+      border-radius: $button-border-radius;
+
+      @include laptop {
+        width: 22%;
+        height: 220px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $button-border-radius;
+      }
+    }
+
+    &-card {
+    }
+  }
+}
+
+.helping {
+  background: url(/assets/gallery/background/background_helping_promoblock.png);
+  padding: 50px 0px 120px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & h2 {
+    @include heading-yellow;
+    margin-left: 120px;
+    margin-right: 50%;
+    line-height: 50px;
+
+    @include phone_1 {
+      margin-left: 40px;
+      line-height: 45px;
+    }
+
+    @media (max-width: 578px) {
+      margin-left: 20px;
+      line-height: 35px;
+    }
+  }
+
+  &--container {
+    margin-left: 120px;
+    margin-right: 120px;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 1110px) {
+      margin-left: 0px;
+    }
+
+    @media (max-width: 578px) {
+      margin-right: 0px;
+
+      margin-left: 0px;
+    }
+
+    &--cardsTop {
+      display: flex;
+      gap: 3%;
+      margin-top: 60px;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+
+      @media (max-width: 1110px) {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        margin-left: 120px;
+      }
+
+      @media (max-width: 578px) {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        margin-right: 0px;
+
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+      }
+    }
+
+    &--cardsBottom {
+      display: flex;
+      gap: 3%;
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 1110px) {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        margin-right: 0px;
+
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      @media (max-width: 578px) {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        margin-right: 0px;
+
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.fixing {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-top: 100px;
+
+  @include tablet {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+  @include phone_1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @include phone_2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  &--left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include phone_1 {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include phone_2 {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & h2 {
+      @include heading-yellow;
+      margin-right: 10%;
+
+      @include tablet {
+        align-self: start;
+      }
+
+      @include phone_2 {
+        margin-right: 0%;
+      }
+    }
+
+    & p {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 40px;
+      color: #e7e7e7;
+      margin-right: 10%;
+
+      @include tablet {
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+
+      @include phone_1 {
+        font-size: 18px;
+        line-height: 20px;
+      }
+
+      @include phone_2 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &--right {
+    width: 700px;
+    height: 400px;
+
+    @include tablet {
+      width: 105%;
+      height: 300px;
+      margin-top: 30px;
+    }
+
+    @include phone_1 {
+      width: 100%;
+      height: 300px;
+      margin-top: 30px;
+    }
+
+    @include phone_2 {
+      width: 110%;
+      height: 300px;
+      margin-top: 30px;
+    }
+
+    & img {
+      border-radius: $button-border-radius;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
