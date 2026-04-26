@@ -101,3 +101,67 @@
     );
   }
 }
+
+.fasterStatic--card {
+  @include card(
+    $font-family: "UNCAGE",
+    $title: 25px,
+    $text: 18px,
+    $width: 22%,
+    $height: 180px,
+    $padding: 0 0 0 0,
+    $align-items: center
+  );
+
+  @include tablet {
+    @include card(
+      $font-family: "UNCAGE",
+      $title: 22px,
+      // Уменьшил шрифт на планшете
+      $text: 16px,
+      $width: 30%,
+      // 3 карточки в ряд
+      $height: 160px,
+      $padding: 0 0 0 0,
+      $align-items: center
+    );
+  }
+
+  @media (max-width: 980px) {
+    @include card(
+      $font-family: "UNCAGE",
+      $title: 20px,
+      $text: 15px,
+      $width: 45%,
+      // 2 карточки в ряд
+      $height: 150px,
+      $padding: 0 0 0 0,
+      $align-items: center
+    );
+  }
+
+  @include phone_1 {
+    @include card(
+      $font-family: "UNCAGE",
+      $title: 18px,
+      $text: 14px,
+      $width: 60%,
+      // 1 карточка в ряд на всю ширину
+      $height: 160px,
+      $padding: 0 0 0 0,
+      $align-items: center
+    );
+  }
+
+  @include phone_2 {
+    @include card(
+      $font-family: "UNCAGE",
+      $title: 16px,
+      $text: 12px,
+      $width: 70%,
+      $height: 160px,
+      $padding: 0 0 0 0,
+      $align-items: center
+    );
+  }
+}

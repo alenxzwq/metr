@@ -127,11 +127,13 @@
   $width: 303px,
   $height: 215px,
   $title: 22px,
-  $text: 18px
+  $text: 18px,
+  $padding: 30px 20px 20px 40px,
+  $align-items: flex-start
 ) {
   width: $width;
   height: $height;
-  padding: 30px 20px 20px 40px;
+  padding: $padding;
 
   background: $dark-card;
   border: 2px solid $turquoise;
@@ -139,7 +141,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: $align-items;
 
   & h6 {
     font-family: $font-family;

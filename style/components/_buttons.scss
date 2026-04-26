@@ -180,3 +180,35 @@
     align-self: center;
   }
 }
+
+.headerAdminBtn {
+  @include button-primary-turquoise(10px 70px, 16px);
+
+  @include phone_1 {
+    padding: 14px 70px;
+    margin-top: 20px;
+    width: 70%;
+  }
+
+  @include phone_2 {
+    padding: 12px 70px;
+    margin-top: 30px;
+    width: 280px;
+  }
+}
+
+.recentActionsBtn {
+  @include button-primary-turquoise(13px 30px, 14px);
+
+  @include phone_1 {
+    @include button-primary-turquoise(13px 10px, 14px);
+    align-self: center;
+    width: 70%;
+  }
+
+  @include phone_2 {
+    @include button-primary-turquoise(13px 10px, 12px);
+    align-self: center;
+    width: 80%;
+  }
+}
