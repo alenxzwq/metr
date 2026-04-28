@@ -310,3 +310,95 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100);
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Создаём оверлей
+  const overlay = document.createElement("div");
+  overlay.className = "header--overlay";
+  document.body.appendChild(overlay);
+
+  // Находим элементы
+  const burger = document.querySelector(".header--groupIcon img:last-child");
+  const navigation = document.querySelector(".header--navigation");
+  const closeBtn = document.querySelector(".header--close-btn");
+  const body = document.body;
+
+  function openMenu() {
+    navigation.classList.add("active");
+    overlay.classList.add("active");
+    body.classList.add("burger-active");
+  }
+
+  function closeMenu() {
+    navigation.classList.remove("active");
+    overlay.classList.remove("active");
+    body.classList.remove("burger-active");
+  }
+
+  function toggleMenu() {
+    if (navigation.classList.contains("active")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  // Открытие по бургеру
+  if (burger) {
+    burger.addEventListener("click", toggleMenu);
+  }
+
+  // Закрытие по крестику
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeMenu);
+  }
+
+  // Закрытие по оверлею
+  overlay.addEventListener("click", closeMenu);
+
+  // Закрытие при клике на ссылку
+  document.querySelectorAll(".header--navigation--list li").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Закрытие по Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && navigation.classList.contains("active")) {
+      closeMenu();
+    }
+  });
+
+  // При изменении размера окна закрываем меню
+  let resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (window.innerWidth > 1200 && navigation.classList.contains("active")) {
+        closeMenu();
+      }
+    }, 250);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollBtn = document.querySelector(".scroll-to-top");
+
+  if (!scrollBtn) return;
+
+  // Показываем/скрываем кнопку при скролле
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  });
+
+  // Плавная прокрутка наверх при клике
+  scrollBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});

@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>МЕТР</title>
-
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/gallery/icon/logo.png"
+    />
     <link rel="stylesheet" href="/style/style.css" />
     <script
       src="https://api-maps.yandex.ru/2.1/?apikey=25288a28-2bbd-44ec-8531-4476453c6249
@@ -15,19 +20,25 @@
   <body>
     <section class="promoblock">
       <header class="header">
-        <img class="header--logo" src="/assets/gallery/icon/logo.png" />
+        <a href="/index.html">
+          <img class="header--logo" src="/assets/gallery/icon/logo.png" />
+        </a>
+
         <nav class="header--navigation">
+          <div class="header--close-btn"></div>
           <ul class="header--navigation--list">
-            <li><a>О фестивале</a></li>
-            <li><a>Активности</a></li>
-            <li><a>Впечатления</a></li>
-            <li><a>Стена метра</a></li>
-            <li><a>Контакты</a></li>
+            <li><a href="/activity/activity.html">О фестивале</a></li>
+            <li><a href="/activity/activity.html">Активности</a></li>
+            <li><a href="reviews">Впечатления</a></li>
+            <li><a href="meterWall">Стена метра</a></li>
+            <li><a href="footer">Контакты</a></li>
           </ul>
         </nav>
-        <button class="btn-header">
-          <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
-        </button>
+        <a href="/registration/registration.htmls">
+          <button class="btn-header">
+            <span>ЗАРЕГИСТРИРОВАТЬСЯ</span>
+          </button>
+        </a>
 
         <div class="header--groupIcon">
           <img src="/assets/gallery/icon/user-add.svg" />
@@ -122,7 +133,7 @@
       </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews" id="reviews">
       <h2 class="reviews__title">Впечатления участников</h2>
 
       <!-- Контейнер для кастомного скролла -->
@@ -369,7 +380,7 @@
       </div>
     </section>
 
-    <section class="meterWall">
+    <section class="meterWall" id="meterWall">
       <div class="meterWall--blockTop">
         <div class="meterWall--blockTop--header">
           <div class="meterWall--blockTop--heading">
@@ -533,10 +544,12 @@
         </div>
       </div>
 
-      <button class="appealBtn"><span>ЗАРЕГИСТРИРОВАТЬСЯ</span></button>
+      <a href="/registration/registration.html"
+        ><button class="appealBtn"><span>ЗАРЕГИСТРИРОВАТЬСЯ</span></button></a
+      >
     </section>
     <div class="rule"></div>
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="footer--logo">
         <img src="/assets/gallery/icon/logo.png" />
         <p>
@@ -664,6 +677,24 @@
     </article>
 
     <div id="overlay"></div>
+
+    <div class="scroll-to-top">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 4L12 20M12 4L18 10M12 4L6 10"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
   </body>
   <script src="/javascript.js"></script>
 </html>

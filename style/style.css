@@ -239,35 +239,97 @@ input[type=number] {
 .btn-primary-yellow {
   background-color: #f8ec46;
   border-radius: 3px;
-  padding: 10px 22px;
+  padding: 10px 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-primary-yellow span {
   font-family: "UNCAGE";
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btn-primary-yellow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 .btn-primary-yellow:hover {
   background: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-primary-yellow:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.btn-primary-yellow:hover span {
+  transform: scale(1.05);
+}
+.btn-primary-yellow:active {
+  transform: translateY(0);
 }
 
 .btn-header {
   background-color: #f8ec46;
   border-radius: 3px;
   padding: 10px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-header span {
   font-family: "UNCAGE";
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btn-header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 .btn-header:hover {
   background: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-header:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.btn-header:hover span {
+  transform: scale(1.05);
+}
+.btn-header:active {
+  transform: translateY(0);
 }
 .btn-header {
   display: block;
@@ -299,6 +361,10 @@ input[type=number] {
   background-color: #f8ec46;
   border-radius: 3px;
   padding: 10px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btn-headerReg span {
   font-family: "UNCAGE";
@@ -307,26 +373,84 @@ input[type=number] {
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btn-headerReg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 .btn-headerReg:hover {
   background: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-headerReg:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.btn-headerReg:hover span {
+  transform: scale(1.05);
+}
+.btn-headerReg:active {
+  transform: translateY(0);
 }
 
 .promoblock-btn {
   background-color: #f8ec46;
   border-radius: 3px;
   padding: 12px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .promoblock-btn span {
   font-family: "UNCAGE";
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.promoblock-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 .promoblock-btn:hover {
   background: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.promoblock-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.promoblock-btn:hover span {
+  transform: scale(1.05);
+}
+.promoblock-btn:active {
+  transform: translateY(0);
 }
 .promoblock-btn {
   display: block;
@@ -341,6 +465,10 @@ input[type=number] {
     background-color: #f8ec46;
     border-radius: 3px;
     padding: 10px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .promoblock-btn span {
     font-family: "UNCAGE";
@@ -349,9 +477,36 @@ input[type=number] {
     line-height: 20px;
     letter-spacing: 0.11em;
     color: #373737;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .promoblock-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
   }
   .promoblock-btn:hover {
     background: rgb(246.140625, 230.953125, 20.859375);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .promoblock-btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  .promoblock-btn:hover span {
+    transform: scale(1.05);
+  }
+  .promoblock-btn:active {
+    transform: translateY(0);
   }
   .promoblock-btn {
     width: 215px;
@@ -363,6 +518,10 @@ input[type=number] {
     background-color: #f8ec46;
     border-radius: 3px;
     padding: 10px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .promoblock-btn span {
     font-family: "UNCAGE";
@@ -371,9 +530,36 @@ input[type=number] {
     line-height: 20px;
     letter-spacing: 0.11em;
     color: #373737;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .promoblock-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
   }
   .promoblock-btn:hover {
     background: rgb(246.140625, 230.953125, 20.859375);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .promoblock-btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  .promoblock-btn:hover span {
+    transform: scale(1.05);
+  }
+  .promoblock-btn:active {
+    transform: translateY(0);
   }
   .promoblock-btn {
     width: 80%;
@@ -385,17 +571,48 @@ input[type=number] {
   background-color: #f8ec46;
   border-radius: 3px;
   padding: 13px 55px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .offer-btn span {
   font-family: "UNCAGE";
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.offer-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 .offer-btn:hover {
   background: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.offer-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.offer-btn:hover span {
+  transform: scale(1.05);
+}
+.offer-btn:active {
+  transform: translateY(0);
 }
 .offer-btn {
   display: block;
@@ -410,6 +627,10 @@ input[type=number] {
     background-color: #f8ec46;
     border-radius: 3px;
     padding: 10px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .offer-btn span {
     font-family: "UNCAGE";
@@ -418,9 +639,36 @@ input[type=number] {
     line-height: 20px;
     letter-spacing: 0.11em;
     color: #373737;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .offer-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
   }
   .offer-btn:hover {
     background: rgb(246.140625, 230.953125, 20.859375);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .offer-btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  .offer-btn:hover span {
+    transform: scale(1.05);
+  }
+  .offer-btn:active {
+    transform: translateY(0);
   }
   .offer-btn {
     width: 265px;
@@ -432,6 +680,10 @@ input[type=number] {
     background-color: #f8ec46;
     border-radius: 3px;
     padding: 12px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .offer-btn span {
     font-family: "UNCAGE";
@@ -440,9 +692,36 @@ input[type=number] {
     line-height: 20px;
     letter-spacing: 0.11em;
     color: #373737;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .offer-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
   }
   .offer-btn:hover {
     background: rgb(246.140625, 230.953125, 20.859375);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .offer-btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  .offer-btn:hover span {
+    transform: scale(1.05);
+  }
+  .offer-btn:active {
+    transform: translateY(0);
   }
   .offer-btn {
     width: 75%;
@@ -454,6 +733,10 @@ input[type=number] {
   background-color: #35c8b5;
   border-radius: 3px;
   padding: 13px 25px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .meterWallBtn span {
   font-family: "UNCAGE";
@@ -463,9 +746,30 @@ input[type=number] {
   letter-spacing: 0.11em;
   color: #373737;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.meterWallBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: left 0.4s ease;
 }
 .meterWallBtn:hover {
   background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+}
+.meterWallBtn:hover::before {
+  left: 0;
+}
+.meterWallBtn:hover span {
+  letter-spacing: 0.15em;
 }
 @media (min-width: 800px) and (max-width: 1199px) {
   .meterWallBtn {
@@ -478,6 +782,10 @@ input[type=number] {
   background-color: #35c8b5;
   border-radius: 3px;
   padding: 13px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btnModal span {
   font-family: "UNCAGE";
@@ -487,15 +795,40 @@ input[type=number] {
   letter-spacing: 0.11em;
   color: #373737;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btnModal::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: left 0.4s ease;
 }
 .btnModal:hover {
   background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+}
+.btnModal:hover::before {
+  left: 0;
+}
+.btnModal:hover span {
+  letter-spacing: 0.15em;
 }
 
 .appealBtn {
   background-color: #35c8b5;
   border-radius: 3px;
   padding: 12px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .appealBtn span {
   font-family: "UNCAGE";
@@ -505,9 +838,30 @@ input[type=number] {
   letter-spacing: 0.11em;
   color: #373737;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.appealBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: left 0.4s ease;
 }
 .appealBtn:hover {
   background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+}
+.appealBtn:hover::before {
+  left: 0;
+}
+.appealBtn:hover span {
+  letter-spacing: 0.15em;
 }
 .appealBtn {
   margin-left: auto;
@@ -540,6 +894,10 @@ input[type=number] {
   background-color: #f8ec46;
   border-radius: 3px;
   padding: 12px 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btnReg span {
   font-family: "UNCAGE";
@@ -548,9 +906,36 @@ input[type=number] {
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btnReg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 .btnReg:hover {
   background: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btnReg:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.btnReg:hover span {
+  transform: scale(1.05);
+}
+.btnReg:active {
+  transform: translateY(0);
 }
 .btnReg {
   width: 415px;
@@ -566,6 +951,10 @@ input[type=number] {
   background-color: #35c8b5;
   border-radius: 3px;
   padding: 13px 70px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btnFixing span {
   font-family: "UNCAGE";
@@ -575,15 +964,40 @@ input[type=number] {
   letter-spacing: 0.11em;
   color: #373737;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btnFixing::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: left 0.4s ease;
 }
 .btnFixing:hover {
   background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+}
+.btnFixing:hover::before {
+  left: 0;
+}
+.btnFixing:hover span {
+  letter-spacing: 0.15em;
 }
 @media (min-width: 800px) and (max-width: 1199px) {
   .btnFixing {
     background-color: #35c8b5;
     border-radius: 3px;
     padding: 13px 70px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .btnFixing span {
     font-family: "UNCAGE";
@@ -593,9 +1007,30 @@ input[type=number] {
     letter-spacing: 0.11em;
     color: #373737;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .btnFixing::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: left 0.4s ease;
   }
   .btnFixing:hover {
     background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+  }
+  .btnFixing:hover::before {
+    left: 0;
+  }
+  .btnFixing:hover span {
+    letter-spacing: 0.15em;
   }
   .btnFixing {
     width: 400px;
@@ -613,6 +1048,10 @@ input[type=number] {
     background-color: #35c8b5;
     border-radius: 3px;
     padding: 13px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .btnFixing span {
     font-family: "UNCAGE";
@@ -622,9 +1061,30 @@ input[type=number] {
     letter-spacing: 0.11em;
     color: #373737;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .btnFixing::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: left 0.4s ease;
   }
   .btnFixing:hover {
     background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+  }
+  .btnFixing:hover::before {
+    left: 0;
+  }
+  .btnFixing:hover span {
+    letter-spacing: 0.15em;
   }
   .btnFixing {
     margin-top: 30px;
@@ -635,6 +1095,10 @@ input[type=number] {
   background-color: #f8ec46;
   border-radius: 3px;
   padding: 10px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btnProfile span {
   font-family: "UNCAGE";
@@ -643,9 +1107,36 @@ input[type=number] {
   line-height: 20px;
   letter-spacing: 0.11em;
   color: #373737;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btnProfile::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
 }
 .btnProfile:hover {
   background: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btnProfile:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.btnProfile:hover span {
+  transform: scale(1.05);
+}
+.btnProfile:active {
+  transform: translateY(0);
 }
 .btnProfile {
   position: absolute;
@@ -667,6 +1158,10 @@ input[type=number] {
   background-color: #35c8b5;
   border-radius: 3px;
   padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .btnResults span {
   font-family: "UNCAGE";
@@ -676,9 +1171,30 @@ input[type=number] {
   letter-spacing: 0.11em;
   color: #373737;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.btnResults::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: left 0.4s ease;
 }
 .btnResults:hover {
   background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+}
+.btnResults:hover::before {
+  left: 0;
+}
+.btnResults:hover span {
+  letter-spacing: 0.15em;
 }
 .btnResults {
   align-self: flex-end;
@@ -710,6 +1226,10 @@ input[type=number] {
   background-color: #35c8b5;
   border-radius: 3px;
   padding: 10px 70px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .headerAdminBtn span {
   font-family: "UNCAGE";
@@ -719,9 +1239,30 @@ input[type=number] {
   letter-spacing: 0.11em;
   color: #373737;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.headerAdminBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: left 0.4s ease;
 }
 .headerAdminBtn:hover {
   background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+}
+.headerAdminBtn:hover::before {
+  left: 0;
+}
+.headerAdminBtn:hover span {
+  letter-spacing: 0.15em;
 }
 @media (min-width: 500px) and (max-width: 799px) {
   .headerAdminBtn {
@@ -742,6 +1283,10 @@ input[type=number] {
   background-color: #35c8b5;
   border-radius: 3px;
   padding: 13px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .recentActionsBtn span {
   font-family: "UNCAGE";
@@ -751,15 +1296,40 @@ input[type=number] {
   letter-spacing: 0.11em;
   color: #373737;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.recentActionsBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: left 0.4s ease;
 }
 .recentActionsBtn:hover {
   background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+}
+.recentActionsBtn:hover::before {
+  left: 0;
+}
+.recentActionsBtn:hover span {
+  letter-spacing: 0.15em;
 }
 @media (min-width: 500px) and (max-width: 799px) {
   .recentActionsBtn {
     background-color: #35c8b5;
     border-radius: 3px;
     padding: 13px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .recentActionsBtn span {
     font-family: "UNCAGE";
@@ -769,9 +1339,30 @@ input[type=number] {
     letter-spacing: 0.11em;
     color: #373737;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .recentActionsBtn::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: left 0.4s ease;
   }
   .recentActionsBtn:hover {
     background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+  }
+  .recentActionsBtn:hover::before {
+    left: 0;
+  }
+  .recentActionsBtn:hover span {
+    letter-spacing: 0.15em;
   }
   .recentActionsBtn {
     align-self: center;
@@ -783,6 +1374,10 @@ input[type=number] {
     background-color: #35c8b5;
     border-radius: 3px;
     padding: 13px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
   .recentActionsBtn span {
     font-family: "UNCAGE";
@@ -792,9 +1387,30 @@ input[type=number] {
     letter-spacing: 0.11em;
     color: #373737;
     white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+  .recentActionsBtn::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: left 0.4s ease;
   }
   .recentActionsBtn:hover {
     background: rgb(42.3162055336, 159.6837944664, 144.5138339921);
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(53, 200, 181, 0.4);
+  }
+  .recentActionsBtn:hover::before {
+    left: 0;
+  }
+  .recentActionsBtn:hover span {
+    letter-spacing: 0.15em;
   }
   .recentActionsBtn {
     align-self: center;
@@ -1772,6 +2388,25 @@ body.no-scroll {
   font-size: 17px;
   color: #f0f0f0;
   cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.header--navigation--list li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f8ec46;
+  transition: width 0.3s ease;
+}
+.header--navigation--list li:hover {
+  color: #f8ec46;
+}
+.header--navigation--list li:hover::after {
+  width: 100%;
 }
 .header--logo {
   width: 56px;
@@ -1800,6 +2435,86 @@ body.no-scroll {
     display: flex;
     gap: 30px;
   }
+}
+@media (max-width: 1200px) {
+  .header--groupIcon img:last-child {
+    display: block !important;
+    cursor: pointer;
+  }
+  .header--navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 400px;
+    height: 100vh;
+    background: #373737;
+    z-index: 1000;
+    padding: 80px 40px;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    display: block !important;
+    font-family: "Manrope";
+  }
+  .header--navigation.active {
+    right: 0;
+  }
+  .header--navigation--list {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.header--close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+.header--close-btn::before, .header--close-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 2px;
+  background: #f8ec46;
+  transition: all 0.3s ease;
+}
+.header--close-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.header--close-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.header--close-btn:hover::before, .header--close-btn:hover::after {
+  background: #f8ec46;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+@media (max-width: 1200px) {
+  .header--close-btn {
+    display: block;
+  }
+}
+.header--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.header--overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 @media (min-width: 1525px) and (max-width: 2000px) {
   .header {
@@ -1846,6 +2561,10 @@ body.no-scroll {
     width: 35px;
     height: 35px;
   }
+}
+
+.burger-active {
+  overflow: hidden;
 }
 
 .footer {
@@ -3702,6 +4421,7 @@ body {
 .gallery--socialMedia-icons img {
   width: 45px;
   height: 45px;
+  cursor: pointer;
 }
 @media (min-width: 250px) and (max-width: 499px) {
   .gallery--socialMedia-icons img {
@@ -3888,6 +4608,65 @@ body {
     background-image: url(/assets/gallery/background/rule_footer_mobile.svg);
     max-width: 500px;
     padding-top: 300px;
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: #f8ec46;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.scroll-to-top svg {
+  color: #373737;
+  transition: transform 0.3s ease;
+}
+.scroll-to-top:hover {
+  background-color: rgb(246.140625, 230.953125, 20.859375);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.scroll-to-top:hover svg {
+  transform: translateY(-3px);
+}
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-width: 500px) and (max-width: 799px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  .scroll-to-top svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (min-width: 250px) and (max-width: 499px) {
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+  .scroll-to-top svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
